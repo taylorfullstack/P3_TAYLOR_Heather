@@ -1,0 +1,20 @@
+@use "../abstracts" as *;
+
+footer {
+    grid-area: footer;
+    background: map-get($color-palette, color-footer-container);
+    
+}
+
+footer h2 {
+    padding-left: 1.125rem;
+}
+
+footer ul {
+    list-style-type: none;
+    padding-left: 1.125rem;
+}
+
+footer a {
+    @include link-palette($link-palette);
+}
