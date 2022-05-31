@@ -1,0 +1,48 @@
+@use "./variables" as *;
+
+/*Color Map*/
+
+$color-palette: (
+    color-primary: $color-primary,
+    color-secondary: $color-secondary,
+    color-tertiary: $color-tertiary,
+
+    color-primary-lighten: $color-primary-lighten,
+    color-tertiary-darken: $color-tertiary-darken,
+
+    color-title: $color-title,
+
+    color-container: $color-container,
+    color-text: $color-text,
+
+    color-search-text: $color-search-text,
+    color-search-container: $color-search-container,
+
+    color-container-accented: $color-container-accented,
+
+    color-howto-icon: $color-howto-icon,
+
+    color-footer-container: $color-footer-container,
+    color-footer-text: $color-footer-text
+);
+
+$link-palette: (
+    link: (
+        text: $color-footer-text,
+    ),
+    visited: (
+        text: $color-footer-text,
+    ),
+    hover:(
+        text: $color-secondary,
+    ),
+    active: (
+        text: $color-primary,
+    ),
+    focus: (
+        text: $color-primary,
+    ),
+    invalid: (
+        text: $color-footer-text
+    ) 
+);
