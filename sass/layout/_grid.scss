@@ -1,0 +1,15 @@
+@use "../abstracts" as *;
+
+body {
+    display: grid;
+    width: 100%;
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas: 
+    "header"
+    "main"
+    "footer";
+}
+
+
+
+
