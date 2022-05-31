@@ -1,0 +1,7 @@
+@mixin link-palette($link-palette) {
+    @each $state, $link-behavior-palette in $link-palette{
+        &:#{$state}{
+            color: map-get($link-behavior-palette, text);
+        }
+    }
+}
