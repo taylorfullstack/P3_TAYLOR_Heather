@@ -1,0 +1,20 @@
+@use "../abstracts" as *;
+
+// different class for the main section on the home page than on the menu pages
+.main {
+    background: map-get($color-palette, color-secondary);
+    grid-area: main;
+    display:grid;
+    width: 100%;
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas: 
+    "explore"
+    "steps"
+    "restaurant";
+}
+
+//Hides h1 in the header
+.home-title {
+    color: $color-container;
+    font-size: xx-small;
+}
