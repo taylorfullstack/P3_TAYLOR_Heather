@@ -1,0 +1,22 @@
+@use "../abstracts" as *;
+
+.header {
+    background: map-get($color-palette, color-container);
+    grid-area: header;
+    display: grid;
+    grid-template-columns: 28% minmax(0, 1fr) 28%;
+    grid-template-areas: 
+    "arrow logo ."
+    ;
+    &__logo {
+        grid-area: logo;
+        justify-self: center;
+        align-self: center;
+    }
+    &__arrow {
+        grid-area: arrow;
+        background-color: aqua;
+        justify-self: center;
+        align-self: center;
+    }
+}
