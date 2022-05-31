@@ -1,0 +1,20 @@
+{
+  "name": "p3_taylor_heather",
+  "version": "1.0.0",
+  "description": "Oh My Food",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch ./sass/main.scss:./css/style.css",
+    "prefix": ""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/htaylor91/P3_TAYLOR_Heather.git"
+  },
+  "author": "Heather TAYLOR",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/htaylor91/P3_TAYLOR_Heather/issues"
+  },
+  "homepage": "https://github.com/htaylor91/P3_TAYLOR_Heather#readme"
+}
