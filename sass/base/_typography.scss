@@ -1,0 +1,23 @@
+@use "../abstracts/" as *;
+
+// Styles
+main, footer {
+  font-family: $body-font;
+  font-weight: normal;
+}
+
+h1 {
+  font-family: $title-font;
+  font-weight: normal;
+  color: $color-title;
+}
+
+footer h2 {
+  font-family: $title-font;
+  font-weight: 300;
+}
+
+a {
+  text-decoration: none;
+}
+
