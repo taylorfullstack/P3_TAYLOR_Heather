@@ -10,6 +10,67 @@ body {
     "footer";
 }
 
+//Menu pages grid
+.restaurant {
+    background: map-get($color-palette, color-secondary);
+    grid-area: main;
+    display: grid;
+    width: 100%;
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas: 
+    "image"
+    "menu";
+    &__image {
+        grid-area: image;
+    }
+    &__menu {
+        grid-area: menu;
+        width: 100%;
+        display: grid;
+        gap: 1em;
+        grid-template-columns: minmax(0, 1fr);
+        grid-template-areas: 
+        "title"
+        "appetizers"
+        "dinners"
+        "desserts"
+        "order";
+    }
+}
+
+.title {
+    grid-area: title;
+    display: flex;
+    justify-content: space-between;
+}
+
+.course {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas: 
+    "course__title"
+    "course__container";
+}
+
+.option {
+    display: grid;
+    width: 100%;
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas: 
+    "option__title ."
+    "option__subtitle option__price";
+    &__title {
+        grid-area: option__title;
+    }
+    &__subtitle {
+        grid-area: option__subtitle;
+    }
+    &__price {
+        grid-area: option__price;
+        text-align: end;
+    }
+}
+
 
 
 
