@@ -12,7 +12,6 @@ body {
 
 //Menu pages grid
 .restaurant {
-    background: map-get($color-palette, color-secondary);
     grid-area: main;
     display: grid;
     width: 100%;
@@ -22,8 +21,16 @@ body {
     "menu";
     &__image {
         grid-area: image;
+        height: 220px;
+        &__img {
+            grid-area: image;
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
     }
     &__menu {
+        background: map-get($color-palette, color-container-accented);
         grid-area: menu;
         width: 100%;
         display: grid;
@@ -45,14 +52,26 @@ body {
 }
 
 .course {
+    gap: 0.5em;
+    background: map-get($color-palette, color-container-accented);
     display: grid;
     grid-template-columns: minmax(0, 1fr);
     grid-template-areas: 
     "course__title"
     "course__container";
+    &__title {
+        grid-area: course__title;
+        text-decoration: underline;
+    }
+    &__container {
+        grid-area: course__container;
+        display: grid;
+        gap: 1em;
+    }
 }
 
 .option {
+    background: map-get($color-palette, color-container);
     display: grid;
     width: 100%;
     grid-template-columns: minmax(0, 1fr);
