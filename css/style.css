@@ -42,7 +42,6 @@ body {
 }
 
 .restaurant {
-  background: #FF79DA;
   grid-area: main;
   display: grid;
   width: 100%;
@@ -51,8 +50,16 @@ body {
 }
 .restaurant__image {
   grid-area: image;
+  height: 220px;
+}
+.restaurant__image__img {
+  grid-area: image;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
 }
 .restaurant__menu {
+  background: #f6f6f6;
   grid-area: menu;
   width: 100%;
   display: grid;
@@ -68,12 +75,24 @@ body {
 }
 
 .course {
+  gap: 0.5em;
+  background: #f6f6f6;
   display: grid;
   grid-template-columns: minmax(0, 1fr);
   grid-template-areas: "course__title" "course__container";
 }
+.course__title {
+  grid-area: course__title;
+  text-decoration: underline;
+}
+.course__container {
+  grid-area: course__container;
+  display: grid;
+  gap: 1em;
+}
 
 .option {
+  background: #ffffff;
   display: grid;
   width: 100%;
   grid-template-columns: minmax(0, 1fr);
@@ -143,18 +162,58 @@ footer a:invalid {
   color: #ffffff;
 }
 
+.home-title {
+  color: #ffffff;
+  font-size: xx-small;
+}
+
 .main {
-  background: #FF79DA;
+  background: #ffffff;
   grid-area: main;
   display: grid;
   width: 100%;
   grid-template-columns: minmax(0, 1fr);
-  grid-template-areas: "explore" "steps" "restaurant";
+  grid-template-areas: "search" "steps" "restaurants";
 }
 
-.home-title {
-  color: #ffffff;
-  font-size: xx-small;
+.search {
+  grid-area: search;
+  display: grid;
+  gap: 1em;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-areas: "form__container" "search__heading" "search__subheading" "form__button";
+}
+.search__heading {
+  grid-area: search__heading;
+}
+.search__subheading {
+  grid-area: search__subheading;
+}
+
+.form {
+  background-color: aqua;
+}
+.form__container {
+  grid-area: form__container;
+}
+.form__button {
+  grid-area: form__button;
+}
+
+.steps {
+  grid-area: steps;
+  display: grid;
+  gap: 1em;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-areas: "heading" "step" "step" "step";
+}
+
+.restaurants {
+  grid-area: restaurants;
+  display: grid;
+  gap: 1em;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-areas: "heading" "card" "card" "card" "card";
 }
 
 /*# sourceMappingURL=style.css.map */
