@@ -1,20 +1,75 @@
 @use "../abstracts" as *;
 
-// different class for the main section on the home page than on the menu pages
-.main {
-    background: map-get($color-palette, color-secondary);
-    grid-area: main;
-    display:grid;
-    width: 100%;
-    grid-template-columns: minmax(0, 1fr);
-    grid-template-areas: 
-    "explore"
-    "steps"
-    "restaurant";
-}
-
 //Hides h1 in the header
 .home-title {
     color: $color-container;
     font-size: xx-small;
 }
+
+// different class for the main section on the home page than on the menu pages
+.main {
+    background: map-get($color-palette, color-container);
+    grid-area: main;
+    display:grid;
+    width: 100%;
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas: 
+    "search"
+    "steps"
+    "restaurants";
+}
+
+.search {
+    grid-area: search;
+    display: grid;
+    gap: 1em;
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas: 
+    "form__container"
+    "search__heading"
+    "search__subheading"
+    "form__button";
+    &__heading {
+        grid-area: search__heading;
+    }
+    &__subheading {
+        grid-area: search__subheading;
+    }
+}
+
+.form {
+background-color: aqua;
+    &__container {
+        grid-area: form__container;
+    }
+    &__button {
+        grid-area: form__button;
+    }
+}
+
+
+.steps {
+    grid-area: steps;
+    display: grid;
+    gap: 1em;
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas: 
+    "heading"
+    "step"
+    "step"
+    "step";
+}
+
+.restaurants {
+    grid-area: restaurants;
+    display: grid;
+    gap: 1em;
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas: 
+    "heading"
+    "card"
+    "card"
+    "card"
+    "card";
+}
+
