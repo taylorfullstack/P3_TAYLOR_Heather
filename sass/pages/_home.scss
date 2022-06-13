@@ -2,7 +2,7 @@
 
 //Hides h1 in the header
 .home-title {
-    color: $color-container;
+    color: transparent;
     font-size: xx-small;
 }
 
@@ -22,34 +22,29 @@
 .search {
     grid-area: search;
     display: grid;
-    gap: 1em;
+    /*gap: 1em;*/
     grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: 1fr 1fr 1fr 1fr;
     grid-template-areas: 
-    "form__container"
+    "form"
     "search__heading"
     "search__subheading"
-    "form__button";
+    "button"
+    ;
     &__heading {
         grid-area: search__heading;
+        justify-self: center;
     }
     &__subheading {
         grid-area: search__subheading;
+        justify-self: center;
     }
 }
-
-.form {
-background-color: aqua;
-    &__container {
-        grid-area: form__container;
-    }
-    &__button {
-        grid-area: form__button;
-    }
-}
-
 
 .steps {
     grid-area: steps;
+    padding: 2rem 1rem 2rem 1rem;
+    background: map-get($color-palette, color-container);
     display: grid;
     gap: 1em;
     grid-template-columns: minmax(0, 1fr);
@@ -58,18 +53,50 @@ background-color: aqua;
     "step"
     "step"
     "step";
+    &__card {
+        background: map-get($color-palette, color-container-accented);
+        border-radius: 18px;
+        padding: 1rem 1rem 1rem 0;
+        display: grid;
+        grid-template-columns: 5% 15% minmax(0, 1fr);
+        grid-template-areas: 
+        "number icon--step text";
+    }
+}
+
+.circle {
+    grid-area: number;
+    position: relative;
+    right: 10px;
+    display: grid;
+    place-content: center;
+    background: map-get($color-palette, color-primary);
+    color: map-get($color-palette, color-container);
+    width: 1.5em;
+    height: 1.5em;
+    border-radius: 50%;
+}
+
+.icon--step {
+    grid-area: icon--step;
+    justify-self: center;
+    align-self: baseline;
+    
 }
 
 .restaurants {
     grid-area: restaurants;
+    padding: 2rem 1rem 2rem 1rem;
+    background: map-get($color-palette, color-container-accented);
     display: grid;
     gap: 1em;
     grid-template-columns: minmax(0, 1fr);
     grid-template-areas: 
     "heading"
-    "card"
-    "card"
-    "card"
-    "card";
+    "card--1"
+    "card--2"
+    "card--3"
+    "card--4"
+    ;
 }
 
