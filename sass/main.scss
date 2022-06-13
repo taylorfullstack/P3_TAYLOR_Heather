@@ -1,13 +1,16 @@
 @use "abstracts/index";
-
+@use "vendors/scss/fontawesome.scss";
+@use "vendors/scss/solid.scss";
+@use "vendors/scss/regular.scss";
 @use "base/base";
 @use "base/typography";
-
+@use "components/cards";
+@use "components/buttons";
+@use "components/icons";
 @use "layout/grid";
 @use "layout/header";
 @use "layout/form";
 @use "layout/footer";
-
 @use "pages/home";
 
 
