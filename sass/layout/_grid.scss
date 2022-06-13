@@ -65,7 +65,7 @@ body {
     }
     &__container {
         grid-area: course__container;
-        display: grid;
+        /*display: grid;*/
         gap: 1em;
     }
 }
@@ -76,8 +76,8 @@ body {
     width: 100%;
     grid-template-columns: minmax(0, 1fr);
     grid-template-areas: 
-    "option__title ."
-    "option__subtitle option__price";
+    "option__title . ."
+    "option__subtitle option__price option__check";
     &__title {
         grid-area: option__title;
     }
@@ -87,6 +87,9 @@ body {
     &__price {
         grid-area: option__price;
         text-align: end;
+    }
+    &__check {
+        grid-area: option__check;
     }
 }
 
