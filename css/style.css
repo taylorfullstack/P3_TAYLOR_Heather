@@ -8437,24 +8437,6 @@ body {
 }
 
 /*home page search form*/
-/*.form {
-    background: map-get($color-palette, color-search-container);
-    grid-area: form;
-    display: grid;
-    grid-template-columns: 28% 5% minmax(0, 1fr) 28%;
-    grid-template-areas: 
-    ". icon input ."
-    ;
-    &__icon {
-        grid-area: icon;
-        align-self: center;
-    }
-    &__input {
-        grid-area: input;
-        background: map-get($color-palette, color-search-container);
-        border: none;
-    }
-}*/
 .form {
   background: #eaeaea;
   grid-area: form;
