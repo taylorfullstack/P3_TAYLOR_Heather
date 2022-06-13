@@ -18,33 +18,31 @@
     <!--search location-->
             <section class="search">
                 <form class="form">
-                    <div class="form__container">
-                        <span class="map-icon"><i class="fa fa-solid fa-map-marker-alt"></i></span>
-                        <input type="search" onfocus="this.placeholder=''" placeholder="Paris, Belleville" name="search">
-                    </div>
-                    <button class="form__button" type="submit">Explorer nos restaurants</button>
+                    <i class="form__icon fa fa-solid fa-map-marker-alt"></i>
+                    <input class="form__input" type="search" onfocus="this.placeholder=''" placeholder="Paris, Belleville" name="search">
                 </form>
+                <button class="btn--search" type="submit">Explorer nos restaurants</button>
                 <h2 class="search__heading">Réservez le menu qui vous convient</h2>
                 <p class="search__subheading">Découvrez des restaurants d'exception, séléctionnés par nos soins.</p>
             </section>
     <!--fonctionnement-->
             <section class="steps">
                 <h2>Fonctionnement</h2>
-                    <div>
-                        <span>1</span>
-                        <i>icon</i>
-                        <h3>Choisissez un restaurant</h3>
-                    </div>
-                    <div>
-                        <span>2</span>
-                        <i>icon</i>
-                        <h3>Composez votre menu</h3>
-                    </div>
-                    <div>
-                        <span>3</span>
-                        <i>icon</i>
-                        <h3>Dégustez un restaurant</h3>
-                    </div>
+                <div class="steps__card">
+                    <span class="circle">1</span>
+                    <i class="icon--steps fa fa-solid fa-mobile-alt fa-fw"></i>
+                    <h3>Choisissez un restaurant</h3>
+                </div>
+                <div class="steps__card">
+                    <span class="circle">2</span>
+                    <i class="icon--steps fa fa-solid fa-list-ul fa-fw"></i>
+                    <h3>Composez votre menu</h3>
+                </div>
+                <div class="steps__card">
+                    <span class="circle">3</span>
+                    <i class="icon--steps fa fa-solid fa-store fa-fw"></i>
+                    <h3>Dégustez un restaurant</h3>
+                </div>
             </section>
     <!--restaurants-->
             <section class="restaurants">
