@@ -34,10 +34,12 @@
     &__heading {
         grid-area: search__heading;
         justify-self: center;
+        text-align: center;
     }
     &__subheading {
         grid-area: search__subheading;
         justify-self: center;
+        text-align: center;
     }
 }
 
