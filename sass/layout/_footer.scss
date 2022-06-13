@@ -18,3 +18,9 @@ footer ul {
 footer a {
     @include link-palette($link-palette);
 }
+
+.fa-utensils, .fa-hands-helping {
+    height: 1rem;
+    width: 1rem;
+    margin-right: 10px;
+}
