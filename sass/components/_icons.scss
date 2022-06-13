@@ -1,0 +1,11 @@
+@use "../abstracts" as *;
+
+.icon {
+    background: transparent;
+    &--steps {
+        color: map-get($color-palette, color-howto-icon);
+        &:hover {
+            color: map-get($color-palette, color-primary);
+        }
+    }
+}
