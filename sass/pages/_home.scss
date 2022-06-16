@@ -45,7 +45,7 @@
 
 .steps {
     grid-area: steps;
-    padding: 2rem 1rem 2rem 1rem;
+    padding: 2rem 1rem 2rem 1.5rem;
     background: map-get($color-palette, color-container);
     display: grid;
     gap: 1em;
@@ -58,11 +58,17 @@
     &__card {
         background: map-get($color-palette, color-container-accented);
         border-radius: 18px;
+        // border
+        box-shadow: 0 5px 20px #e7e7e7; //to darken
         padding: 1rem 1rem 1rem 0;
         display: grid;
-        grid-template-columns: 5% 15% minmax(0, 1fr);
         grid-template-areas: 
         "number icon--step text";
+        grid-template-columns: 5% 15% minmax(0, 1fr);
+        align-items: center;
+        &:hover {
+            background: map-get($color-palette, color-primary-lighten);
+        }
     }
 }
 
@@ -83,12 +89,11 @@
     grid-area: icon--step;
     justify-self: center;
     align-self: baseline;
-    
 }
 
 .restaurants {
     grid-area: restaurants;
-    padding: 2rem 1rem 2rem 1rem;
+    padding: 2rem 1rem;
     background: map-get($color-palette, color-container-accented);
     display: grid;
     gap: 1em;
