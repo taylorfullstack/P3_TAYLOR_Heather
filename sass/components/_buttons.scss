@@ -1,12 +1,16 @@
 @use "../abstracts" as *;
 
-.btn--search {
+.btn {
     grid-area: button;
     width: 50vw;
-    justify-self: center;
     background: map-get($color-palette, color-primary);
     color: map-get($color-palette, color-container);
     border: none;
     border-radius: 30px;
+    &--search {
+        justify-self: center;
+    }
 }
+
+// btn--command
 
