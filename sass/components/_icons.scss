@@ -4,8 +4,32 @@
     background: transparent;
     &--steps {
         color: map-get($color-palette, color-howto-icon);
+        text-align: center;
         &:hover {
             color: map-get($color-palette, color-primary);
         }
+    }
+}
+
+.fa-heart {
+    color: red;
+}
+
+.heart__label {
+    position: relative;
+    font-size: 1.5rem;
+}
+
+.heart__input {
+    position: absolute;
+    opacity: 0;
+    height: 1.5rem;
+    width: 1.5rem;
+    cursor: pointer;
+    align-self: center;
+    justify-self: center;
+    z-index: 2;
+    &:checked {
+        background-color: aqua;
     }
 }
