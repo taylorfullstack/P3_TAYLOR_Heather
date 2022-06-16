@@ -11,30 +11,29 @@ body {
 }
 
 //Menu pages grid
+
 .restaurant {
     grid-area: main;
     display: grid;
     width: 100%;
-    grid-template-columns: minmax(0, 1fr);
     grid-template-areas: 
-    "image"
+    "img"
+    "overlap"
     "menu";
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: 220px 1.5em minmax(0 , 1fr);
     &__image {
-        grid-area: image;
-        height: 220px;
+        grid-row: img / overlap;
         &__img {
-            grid-area: image;
             height: 100%;
             width: 100%;
             object-fit: cover;
         }
     }
     &__menu {
-        background: map-get($color-palette, color-container-accented);
-        grid-area: menu;
+        grid-row: overlap / menu;
         width: 100%;
         display: grid;
-        gap: 1em;
         grid-template-columns: minmax(0, 1fr);
         grid-template-areas: 
         "title"
@@ -45,14 +44,24 @@ body {
     }
 }
 
+.restaurant__image, .restaurant__menu {
+    grid-column: 1/-1;
+}
+
 .title {
     grid-area: title;
+    background: map-get($color-palette, color-container-accented);
+    padding: 1.5rem;
+    border-top: 1px solid transparent;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
     display: flex;
     justify-content: space-between;
 }
 
 .course {
     gap: 0.5em;
+    padding: 1rem;
     background: map-get($color-palette, color-container-accented);
     display: grid;
     grid-template-columns: minmax(0, 1fr);
@@ -61,36 +70,50 @@ body {
     "course__container";
     &__title {
         grid-area: course__title;
-        text-decoration: underline;
+        padding: 0rem 0.5rem;
+        font-weight: 300;
+        font-size: 1.2rem;
+        border-bottom: 3px solid map-get($color-palette, color-tertiary);
     }
     &__container {
         grid-area: course__container;
-        /*display: grid;*/
+        display: grid;
         gap: 1em;
     }
 }
 
 .option {
     background: map-get($color-palette, color-container);
+    padding: 1rem;
+    border: 0px solid transparent;
+    border-radius: 20px;
+    box-shadow: 0 5px 20px #e7e7e7;
     display: grid;
     width: 100%;
-    grid-template-columns: minmax(0, 1fr);
     grid-template-areas: 
-    "option__title . ."
-    "option__subtitle option__price option__check";
+    "option__text option__price option__check"
+    "option__text option__price option__check";
+    grid-template-columns: minmax(0, 1fr);
     &__title {
-        grid-area: option__title;
+        grid-area: option__text;
     }
     &__subtitle {
-        grid-area: option__subtitle;
+        grid-area: option__text;
     }
     &__price {
         grid-area: option__price;
-        text-align: end;
+        align-self: end;
+        font-weight: 700;
     }
     &__check {
         grid-area: option__check;
+        align-self: center;
+        opacity: 0%;
     }
+}
+
+.grid {
+    display: grid;
 }
 
 
