@@ -1,6 +1,431 @@
 @import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 /*Color Map*/
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+}
+
+main, footer {
+  font-family: "Roboto", sans-serif;
+  font-weight: normal;
+}
+
+h1 {
+  font-family: "Shrikhand", cursive;
+  font-weight: normal;
+  color: #101010;
+  font-size: 1.8rem;
+}
+
+h2 {
+  font-size: 1.4rem;
+}
+
+h3 {
+  font-size: 1.2rem;
+}
+
+h4 {
+  font-size: 1rem;
+}
+
+footer h2 {
+  font-family: "Shrikhand", cursive;
+  font-weight: 300;
+}
+
+a {
+  text-decoration: none;
+}
+
+.card {
+  border: 0px solid transparent;
+  border-radius: 20px;
+  box-shadow: 0 5px 20px #e7e7e7;
+  display: block;
+  position: relative;
+}
+.card__image {
+  height: 175px;
+  width: 100%;
+  object-fit: cover;
+  display: block;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+.card__body {
+  padding: 0.5em;
+  background: #ffffff;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 20%;
+  grid-template-areas: "card__body__heading card__body__icon" "card__body__subheading card__body__icon";
+}
+.card__body__text {
+  grid-area: card__body__heading/card__body__subheading;
+}
+.card__body__heading {
+  grid-area: card__body__heading;
+}
+.card__body__subheading {
+  grid-area: card__body__subheading;
+}
+.card__body__icon {
+  grid-area: card__body__icon;
+  display: grid;
+  align-self: center;
+  justify-self: end;
+  padding-right: 0.5em;
+  font-size: 1.5rem;
+}
+.card--1 {
+  grid-area: card--1;
+}
+.card--2 {
+  grid-area: card--2;
+}
+.card--3 {
+  grid-area: card--3;
+}
+.card--4 {
+  grid-area: card--4;
+}
+
+.new {
+  background-color: #99E2D0;
+  color: #008766;
+  font-weight: 500;
+  padding: 0.5em;
+  border-radius: 0.2em;
+  position: absolute;
+  top: 1em;
+  right: 1em;
+}
+
+.btn {
+  grid-area: button;
+  width: 50vw;
+  background: #9356DC;
+  color: #ffffff;
+  border: none;
+  border-radius: 30px;
+}
+.btn--search {
+  justify-self: center;
+}
+
+.icon {
+  background: transparent;
+}
+.icon--steps {
+  color: #7e7e7e;
+  text-align: center;
+}
+.icon--steps:hover {
+  color: #9356DC;
+}
+
+.fa-heart {
+  color: red;
+}
+
+.heart__label {
+  position: relative;
+  font-size: 1.5rem;
+}
+
+.heart__input {
+  position: absolute;
+  opacity: 0;
+  height: 1.5rem;
+  width: 1.5rem;
+  cursor: pointer;
+  align-self: center;
+  justify-self: center;
+  z-index: 2;
+}
+.heart__input:checked {
+  background-color: aqua;
+}
+
+body {
+  display: grid;
+  width: 100%;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-areas: "header" "main" "footer";
+}
+
+.restaurant {
+  grid-area: main;
+  display: grid;
+  width: 100%;
+  grid-template-areas: "img" "overlap" "menu";
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-rows: 220px 1.5em minmax(0, 1fr);
+}
+.restaurant__image {
+  grid-row: img/overlap;
+}
+.restaurant__image__img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+.restaurant__menu {
+  grid-row: overlap/menu;
+  width: 100%;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-areas: "title" "appetizers" "dinners" "desserts" "order";
+}
+
+.restaurant__image, .restaurant__menu {
+  grid-column: 1/-1;
+}
+
+.title {
+  grid-area: title;
+  background: #f6f6f6;
+  padding: 1.5rem;
+  border-top: 1px solid transparent;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.course {
+  gap: 0.5em;
+  padding: 1rem;
+  background: #f6f6f6;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-areas: "course__title" "course__container";
+}
+.course__title {
+  grid-area: course__title;
+  padding: 0rem 0.5rem;
+  font-weight: 300;
+  font-size: 1.2rem;
+  border-bottom: 3px solid #99E2D0;
+}
+.course__container {
+  grid-area: course__container;
+  display: grid;
+  gap: 1em;
+}
+
+.option {
+  background: #ffffff;
+  padding: 1rem;
+  border: 0px solid transparent;
+  border-radius: 20px;
+  box-shadow: 0 5px 20px #e7e7e7;
+  display: grid;
+  width: 100%;
+  grid-template-areas: "option__text option__price option__check" "option__text option__price option__check";
+  grid-template-columns: minmax(0, 1fr);
+}
+.option__title {
+  grid-area: option__text;
+}
+.option__subtitle {
+  grid-area: option__text;
+}
+.option__price {
+  grid-area: option__price;
+  align-self: end;
+  font-weight: 700;
+}
+.option__check {
+  grid-area: option__check;
+  align-self: center;
+  opacity: 0%;
+}
+
+.grid {
+  display: grid;
+}
+
+.header {
+  background: #ffffff;
+  grid-area: header;
+  gap: 1rem;
+  display: grid;
+  grid-template-columns: 28% minmax(0, 1fr) 28%;
+  grid-template-rows: 10% minmax(0, 1fr) 10%;
+  grid-template-areas: ". . ." "arrow logo ." ". . .";
+}
+.header__logo {
+  grid-area: logo;
+  justify-self: center;
+  align-self: center;
+}
+.header__arrow {
+  grid-area: arrow;
+  justify-self: center;
+  align-self: center;
+}
+
+/*home page search form*/
+.form {
+  background: #eaeaea;
+  grid-area: form;
+  width: 100%;
+  height: 3em;
+  display: flex;
+  justify-content: center;
+}
+.form__icon {
+  color: #353535;
+  align-self: center;
+}
+.form__input {
+  background: #eaeaea;
+  border: none;
+  margin-left: 25px;
+}
+.form__input::placeholder {
+  color: #353535;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+footer {
+  grid-area: footer;
+  background: #353535;
+}
+
+footer h2 {
+  padding: 1.125rem;
+}
+
+footer ul {
+  list-style-type: none;
+  padding-left: 1.125rem;
+  line-height: 1.5;
+}
+
+footer a:link {
+  color: #ffffff;
+}
+footer a:visited {
+  color: #ffffff;
+}
+footer a:hover {
+  color: #FF79DA;
+}
+footer a:active {
+  color: #9356DC;
+}
+footer a:focus {
+  color: #9356DC;
+}
+footer a:invalid {
+  color: #ffffff;
+}
+
+.fa-utensils, .fa-hands-helping {
+  height: 1rem;
+  width: 1rem;
+  margin-right: 10px;
+}
+
+.home-title {
+  color: transparent;
+  font-size: xx-small;
+}
+
+.main {
+  background: #ffffff;
+  grid-area: main;
+  display: grid;
+  width: 100%;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-areas: "search" "steps" "restaurants";
+}
+
+.search {
+  grid-area: search;
+  display: grid;
+  /*gap: 1em;*/
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  grid-template-areas: "form" "search__heading" "search__subheading" "button";
+}
+.search__heading {
+  grid-area: search__heading;
+  justify-self: center;
+  text-align: center;
+}
+.search__subheading {
+  grid-area: search__subheading;
+  justify-self: center;
+  text-align: center;
+}
+
+.steps {
+  grid-area: steps;
+  padding: 2rem 1rem 2rem 1.5rem;
+  background: #ffffff;
+  display: grid;
+  gap: 1em;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-areas: "heading" "step" "step" "step";
+}
+.steps__card {
+  background: #f6f6f6;
+  border-radius: 18px;
+  box-shadow: 0 5px 20px #e7e7e7;
+  padding: 1rem 1rem 1rem 0;
+  display: grid;
+  grid-template-areas: "number icon--step text";
+  grid-template-columns: 5% 15% minmax(0, 1fr);
+  align-items: center;
+}
+.steps__card:hover {
+  background: #f5edff;
+}
+
+.circle {
+  grid-area: number;
+  position: relative;
+  right: 10px;
+  display: grid;
+  place-content: center;
+  background: #9356DC;
+  color: #ffffff;
+  width: 1.5em;
+  height: 1.5em;
+  border-radius: 50%;
+}
+
+.icon--step {
+  grid-area: icon--step;
+  justify-self: center;
+  align-self: baseline;
+}
+
+.restaurants {
+  grid-area: restaurants;
+  padding: 2rem 1rem;
+  background: #f6f6f6;
+  display: grid;
+  gap: 1em;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-areas: "heading" "card--1" "card--2" "card--3" "card--4";
+}
+
 /*!
  * Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com
  * License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
@@ -8231,431 +8656,6 @@ readers do not read off random characters that represent icons */
 .fa-regular {
   font-family: "Font Awesome 6 Free";
   font-weight: 400;
-}
-
-*,
-*::after,
-*::before {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  width: 100vw;
-  height: 100vh;
-}
-
-main, footer {
-  font-family: "Roboto", sans-serif;
-  font-weight: normal;
-}
-
-h1 {
-  font-family: "Shrikhand", cursive;
-  font-weight: normal;
-  color: #101010;
-  font-size: 1.8rem;
-}
-
-h2 {
-  font-size: 1.4rem;
-}
-
-h3 {
-  font-size: 1.2rem;
-}
-
-h4 {
-  font-size: 1rem;
-}
-
-footer h2 {
-  font-family: "Shrikhand", cursive;
-  font-weight: 300;
-}
-
-a {
-  text-decoration: none;
-}
-
-.card {
-  border: 0px solid transparent;
-  border-radius: 20px;
-  box-shadow: 0 5px 20px #e7e7e7;
-  display: block;
-  position: relative;
-}
-.card__image {
-  height: 175px;
-  width: 100%;
-  object-fit: cover;
-  display: block;
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
-}
-.card__body {
-  padding: 0.5em;
-  background: #ffffff;
-  border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px;
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) 20%;
-  grid-template-areas: "card__body__heading card__body__icon" "card__body__subheading card__body__icon";
-}
-.card__body__text {
-  grid-area: card__body__heading/card__body__subheading;
-}
-.card__body__heading {
-  grid-area: card__body__heading;
-}
-.card__body__subheading {
-  grid-area: card__body__subheading;
-}
-.card__body__icon {
-  grid-area: card__body__icon;
-  display: grid;
-  align-self: center;
-  justify-self: end;
-  padding-right: 0.5em;
-  font-size: 1.5rem;
-}
-.card--1 {
-  grid-area: card--1;
-}
-.card--2 {
-  grid-area: card--2;
-}
-.card--3 {
-  grid-area: card--3;
-}
-.card--4 {
-  grid-area: card--4;
-}
-
-.new {
-  background-color: #99E2D0;
-  color: #008766;
-  font-weight: 500;
-  padding: 0.5em;
-  border-radius: 0.2em;
-  position: absolute;
-  top: 1em;
-  right: 1em;
-}
-
-.btn {
-  grid-area: button;
-  width: 50vw;
-  background: #9356DC;
-  color: #ffffff;
-  border: none;
-  border-radius: 30px;
-}
-.btn--search {
-  justify-self: center;
-}
-
-.icon {
-  background: transparent;
-}
-.icon--steps {
-  color: #7e7e7e;
-  text-align: center;
-}
-.icon--steps:hover {
-  color: #9356DC;
-}
-
-.fa-heart {
-  color: red;
-}
-
-.heart__label {
-  position: relative;
-  font-size: 1.5rem;
-}
-
-.heart__input {
-  position: absolute;
-  opacity: 0;
-  height: 1.5rem;
-  width: 1.5rem;
-  cursor: pointer;
-  align-self: center;
-  justify-self: center;
-  z-index: 2;
-}
-.heart__input:checked {
-  background-color: aqua;
-}
-
-body {
-  display: grid;
-  width: 100%;
-  grid-template-columns: minmax(0, 1fr);
-  grid-template-areas: "header" "main" "footer";
-}
-
-.restaurant {
-  grid-area: main;
-  display: grid;
-  width: 100%;
-  grid-template-areas: "img" "overlap" "menu";
-  grid-template-columns: minmax(0, 1fr);
-  grid-template-rows: 220px 1.5em minmax(0, 1fr);
-}
-.restaurant__image {
-  grid-row: img/overlap;
-}
-.restaurant__image__img {
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
-}
-.restaurant__menu {
-  grid-row: overlap/menu;
-  width: 100%;
-  display: grid;
-  grid-template-columns: minmax(0, 1fr);
-  grid-template-areas: "title" "appetizers" "dinners" "desserts" "order";
-}
-
-.restaurant__image, .restaurant__menu {
-  grid-column: 1/-1;
-}
-
-.title {
-  grid-area: title;
-  background: #f6f6f6;
-  padding: 1.5rem;
-  border-top: 1px solid transparent;
-  border-top-left-radius: 30px;
-  border-top-right-radius: 30px;
-  display: flex;
-  justify-content: space-between;
-}
-
-.course {
-  gap: 0.5em;
-  padding: 1rem;
-  background: #f6f6f6;
-  display: grid;
-  grid-template-columns: minmax(0, 1fr);
-  grid-template-areas: "course__title" "course__container";
-}
-.course__title {
-  grid-area: course__title;
-  padding: 0rem 0.5rem;
-  font-weight: 300;
-  font-size: 1.2rem;
-  border-bottom: 3px solid #99E2D0;
-}
-.course__container {
-  grid-area: course__container;
-  display: grid;
-  gap: 1em;
-}
-
-.option {
-  background: #ffffff;
-  padding: 1rem;
-  border: 0px solid transparent;
-  border-radius: 20px;
-  box-shadow: 0 5px 20px #e7e7e7;
-  display: grid;
-  width: 100%;
-  grid-template-areas: "option__text option__price option__check" "option__text option__price option__check";
-  grid-template-columns: minmax(0, 1fr);
-}
-.option__title {
-  grid-area: option__text;
-}
-.option__subtitle {
-  grid-area: option__text;
-}
-.option__price {
-  grid-area: option__price;
-  align-self: end;
-  font-weight: 700;
-}
-.option__check {
-  grid-area: option__check;
-  align-self: center;
-  opacity: 0%;
-}
-
-.grid {
-  display: grid;
-}
-
-.header {
-  background: #ffffff;
-  grid-area: header;
-  gap: 1rem;
-  display: grid;
-  grid-template-columns: 28% minmax(0, 1fr) 28%;
-  grid-template-rows: 10% minmax(0, 1fr) 10%;
-  grid-template-areas: ". . ." "arrow logo ." ". . .";
-}
-.header__logo {
-  grid-area: logo;
-  justify-self: center;
-  align-self: center;
-}
-.header__arrow {
-  grid-area: arrow;
-  justify-self: center;
-  align-self: center;
-}
-
-/*home page search form*/
-.form {
-  background: #eaeaea;
-  grid-area: form;
-  width: 100%;
-  height: 3em;
-  display: flex;
-  justify-content: center;
-}
-.form__icon {
-  color: #353535;
-  align-self: center;
-}
-.form__input {
-  background: #eaeaea;
-  border: none;
-  margin-left: 25px;
-}
-.form__input::placeholder {
-  color: #353535;
-  font-weight: 600;
-  font-size: 1rem;
-}
-
-footer {
-  grid-area: footer;
-  background: #353535;
-}
-
-footer h2 {
-  padding: 1.125rem;
-}
-
-footer ul {
-  list-style-type: none;
-  padding-left: 1.125rem;
-  line-height: 1.5;
-}
-
-footer a:link {
-  color: #ffffff;
-}
-footer a:visited {
-  color: #ffffff;
-}
-footer a:hover {
-  color: #FF79DA;
-}
-footer a:active {
-  color: #9356DC;
-}
-footer a:focus {
-  color: #9356DC;
-}
-footer a:invalid {
-  color: #ffffff;
-}
-
-.fa-utensils, .fa-hands-helping {
-  height: 1rem;
-  width: 1rem;
-  margin-right: 10px;
-}
-
-.home-title {
-  color: transparent;
-  font-size: xx-small;
-}
-
-.main {
-  background: #ffffff;
-  grid-area: main;
-  display: grid;
-  width: 100%;
-  grid-template-columns: minmax(0, 1fr);
-  grid-template-areas: "search" "steps" "restaurants";
-}
-
-.search {
-  grid-area: search;
-  display: grid;
-  /*gap: 1em;*/
-  grid-template-columns: minmax(0, 1fr);
-  grid-template-rows: 1fr 1fr 1fr 1fr;
-  grid-template-areas: "form" "search__heading" "search__subheading" "button";
-}
-.search__heading {
-  grid-area: search__heading;
-  justify-self: center;
-  text-align: center;
-}
-.search__subheading {
-  grid-area: search__subheading;
-  justify-self: center;
-  text-align: center;
-}
-
-.steps {
-  grid-area: steps;
-  padding: 2rem 1rem 2rem 1.5rem;
-  background: #ffffff;
-  display: grid;
-  gap: 1em;
-  grid-template-columns: minmax(0, 1fr);
-  grid-template-areas: "heading" "step" "step" "step";
-}
-.steps__card {
-  background: #f6f6f6;
-  border-radius: 18px;
-  box-shadow: 0 5px 20px #e7e7e7;
-  padding: 1rem 1rem 1rem 0;
-  display: grid;
-  grid-template-areas: "number icon--step text";
-  grid-template-columns: 5% 15% minmax(0, 1fr);
-  align-items: center;
-}
-.steps__card:hover {
-  background: #f5edff;
-}
-
-.circle {
-  grid-area: number;
-  position: relative;
-  right: 10px;
-  display: grid;
-  place-content: center;
-  background: #9356DC;
-  color: #ffffff;
-  width: 1.5em;
-  height: 1.5em;
-  border-radius: 50%;
-}
-
-.icon--step {
-  grid-area: icon--step;
-  justify-self: center;
-  align-self: baseline;
-}
-
-.restaurants {
-  grid-area: restaurants;
-  padding: 2rem 1rem;
-  background: #f6f6f6;
-  display: grid;
-  gap: 1em;
-  grid-template-columns: minmax(0, 1fr);
-  grid-template-areas: "heading" "card--1" "card--2" "card--3" "card--4";
 }
 
 /*# sourceMappingURL=style.css.map */
