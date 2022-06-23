@@ -132,6 +132,10 @@ a {
   justify-self: center;
   height: 65%;
 }
+.btn--command {
+  grid-column: -1/1;
+  justify-self: center;
+}
 
 .fa-heart--empty {
   cursor: pointer;
@@ -220,6 +224,13 @@ body {
   padding: 0rem 0.5rem;
   font-weight: 300;
   font-size: 1.2rem;
+  position: relative;
+}
+.course__title::before {
+  content: "";
+  width: 10%;
+  position: absolute;
+  padding: 0.5em;
   border-bottom: 3px solid #99E2D0;
 }
 .course__container {
@@ -258,6 +269,8 @@ body {
 
 .grid {
   display: grid;
+  background: #f6f6f6;
+  padding: 2rem 0 5rem 0;
 }
 
 .header {
@@ -309,6 +322,7 @@ body {
   border: none;
   margin-left: 25px;
   grid-row: 1;
+  text-align: center;
 }
 .form__input::placeholder {
   color: #353535;
