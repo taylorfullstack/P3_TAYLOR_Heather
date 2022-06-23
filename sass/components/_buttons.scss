@@ -17,6 +17,8 @@
         justify-self: center;
         height: 65%;
     }
+    &--command {
+        grid-column: -1/1;
+        justify-self: center;
+    }
 }
-
-// btn--command

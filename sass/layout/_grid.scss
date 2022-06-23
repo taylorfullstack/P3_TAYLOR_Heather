@@ -73,7 +73,15 @@ body {
         padding: 0rem 0.5rem;
         font-weight: 300;
         font-size: 1.2rem;
-        border-bottom: 3px solid map-get($color-palette, color-tertiary);
+        position: relative;
+        //border-bottom: 3px solid map-get($color-palette, color-tertiary);
+        &::before {
+            content: "";
+            width: 10%;
+            position: absolute;
+            padding: 0.5em;
+            border-bottom: 3px solid map-get($color-palette, color-tertiary);
+        }
     }
     &__container {
         grid-area: course__container;
@@ -114,6 +122,8 @@ body {
 
 .grid {
     display: grid;
+    background: map-get($color-palette, color-container-accented);
+    padding: 2rem 0 5rem 0;
 }
 
 
