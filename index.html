@@ -16,13 +16,17 @@
         <main class="main">
     <!--search location-->
             <section class="search">
-                <form class="form">
-                    <i class="form__icon fa fa-solid fa-map-marker-alt"></i>
-                    <input class="form__input" type="search" onfocus="this.placeholder=''" placeholder="Paris, Belleville" name="search">
+                <form class="search__form form">
+                    <div class="form__container">
+                        <i class="form__icon fa fa-solid fa-map-marker-alt"></i>
+                        <input class="form__input" type="search" onfocus="this.placeholder=''" placeholder="Paris, Belleville" name="search">
+                    </div>
+                    <button class="btn btn--search form__btn" type="submit">Explorer nos restaurants</button>
                 </form>
-                <button class="btn btn--search" type="submit">Explorer nos restaurants</button>
+                <div class="search__text">
                 <h2 class="search__heading">Réservez le menu qui vous convient</h2>
                 <p class="search__subheading">Découvrez des restaurants d'exception, séléctionnés par nos soins.</p>
+                </div>
             </section>
     <!--fonctionnement-->
             <section class="steps">
@@ -110,8 +114,7 @@
                 </article>
             </section>
         </main>
-<!--footer
-add spacing after icons - check to see if this works with current tag formatting-->
+<!--footer-->
         <footer>
             <h2>
                 <a href="#">ohmyfood</a>
