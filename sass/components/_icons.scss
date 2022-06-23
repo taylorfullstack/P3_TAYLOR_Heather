@@ -1,35 +1,19 @@
 @use "../abstracts" as *;
 
-.icon {
-    background: transparent;
-    &--steps {
-        color: map-get($color-palette, color-howto-icon);
-        text-align: center;
+.fa-heart {
+    position: relative;
+    cursor: pointer;
+    &--empty {
+        color: black;
         &:hover {
-            color: map-get($color-palette, color-primary);
+            color: transparent;
         }
     }
-}
-
-.fa-heart {
-    color: red;
-}
-
-.heart__label {
-    position: relative;
-    font-size: 1.5rem;
-}
-
-.heart__input {
-    position: absolute;
-    opacity: 0;
-    height: 1.5rem;
-    width: 1.5rem;
-    cursor: pointer;
-    align-self: center;
-    justify-self: center;
-    z-index: 2;
-    &:checked {
-        background-color: aqua;
+    &--full {
+        position: absolute;
+        color: transparent;
+        &:hover {
+            color: red;
+        }
     }
 }
