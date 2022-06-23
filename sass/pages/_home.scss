@@ -63,11 +63,19 @@
         padding: 1rem 1rem 1rem 0;
         display: grid;
         grid-template-areas: 
-        "number icon--step text";
+        "number icon text";
         grid-template-columns: 5% 15% minmax(0, 1fr);
         align-items: center;
         &:hover {
             background: map-get($color-palette, color-primary-lighten);
+        }
+        &__icon {
+            color: map-get($color-palette, color-howto-icon);
+            grid-area: icon;
+            justify-self: center;
+            &:hover {
+                color: map-get($color-palette, color-primary);
+            }
         }
     }
 }
@@ -83,12 +91,6 @@
     width: 1.5em;
     height: 1.5em;
     border-radius: 50%;
-}
-
-.icon--step {
-    grid-area: icon--step;
-    justify-self: center;
-    align-self: baseline;
 }
 
 .restaurants {
