@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 /*Color Map*/
+/*Link map*/
 *,
 *::after,
 *::before {
@@ -124,38 +125,22 @@ a {
   justify-self: center;
 }
 
-.icon {
-  background: transparent;
-}
-.icon--steps {
-  color: #7e7e7e;
-  text-align: center;
-}
-.icon--steps:hover {
-  color: #9356DC;
-}
-
 .fa-heart {
-  color: red;
-}
-
-.heart__label {
   position: relative;
-  font-size: 1.5rem;
-}
-
-.heart__input {
-  position: absolute;
-  opacity: 0;
-  height: 1.5rem;
-  width: 1.5rem;
   cursor: pointer;
-  align-self: center;
-  justify-self: center;
-  z-index: 2;
 }
-.heart__input:checked {
-  background-color: aqua;
+.fa-heart--empty {
+  color: black;
+}
+.fa-heart--empty:hover {
+  color: transparent;
+}
+.fa-heart--full {
+  position: absolute;
+  color: transparent;
+}
+.fa-heart--full:hover {
+  color: red;
 }
 
 body {
@@ -389,12 +374,20 @@ footer a:invalid {
   box-shadow: 0 5px 20px #e7e7e7;
   padding: 1rem 1rem 1rem 0;
   display: grid;
-  grid-template-areas: "number icon--step text";
+  grid-template-areas: "number icon text";
   grid-template-columns: 5% 15% minmax(0, 1fr);
   align-items: center;
 }
 .steps__card:hover {
   background: #f5edff;
+}
+.steps__card__icon {
+  color: #7e7e7e;
+  grid-area: icon;
+  justify-self: center;
+}
+.steps__card__icon:hover {
+  color: #9356DC;
 }
 
 .circle {
@@ -408,12 +401,6 @@ footer a:invalid {
   width: 1.5em;
   height: 1.5em;
   border-radius: 50%;
-}
-
-.icon--step {
-  grid-area: icon--step;
-  justify-self: center;
-  align-self: baseline;
 }
 
 .restaurants {
