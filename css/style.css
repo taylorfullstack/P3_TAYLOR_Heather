@@ -148,7 +148,7 @@ a {
   position: absolute;
   color: transparent;
 }
-.fa-heart--full:hover {
+.fa-heart--full:hover, .fa-heart--full:active, .fa-heart--full:focus {
   animation-name: heart;
   animation-duration: 300ms;
   animation-timing-function: ease-in-out;
@@ -159,10 +159,10 @@ a {
 
 @keyframes heart {
   0% {
-    transform: scale(0);
+    opacity: 0%;
   }
   100% {
-    transform: scale(1.05);
+    opacity: 100%;
   }
 }
 body {
@@ -195,6 +195,12 @@ body {
   grid-template-columns: minmax(0, 1fr);
   grid-template-areas: "title" "appetizers" "dinners" "desserts" "order";
 }
+@media only screen and (min-width: 800px) {
+  .restaurant__menu {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas: "title title title" "appetizers dinners desserts" "order order order";
+  }
+}
 
 .restaurant__image, .restaurant__menu {
   grid-column: 1/-1;
@@ -209,6 +215,9 @@ body {
   border-top-right-radius: 30px;
   display: flex;
   justify-content: space-between;
+}
+.title__icon {
+  align-self: center;
 }
 
 .course {
@@ -271,6 +280,11 @@ body {
   display: grid;
   background: #f6f6f6;
   padding: 2rem 0 5rem 0;
+}
+@media only screen and (min-width: 800px) {
+  .grid {
+    grid-column: -1/1;
+  }
 }
 
 .header {
@@ -421,6 +435,13 @@ footer a:invalid {
   gap: 1em;
   grid-template-columns: minmax(0, 1fr);
   grid-template-areas: "heading" "step" "step" "step";
+  /*@media only screen and (min-width: 800px){
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
+      grid-template-areas: 
+      "heading heading"
+      "step step step"
+      ;
+  }*/
 }
 .steps__card {
   background: #f6f6f6;
