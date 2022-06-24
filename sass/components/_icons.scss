@@ -1,16 +1,19 @@
 @use "../abstracts" as *;
 
 .fa-heart {
+    z-index: 2;
     &--empty{
         cursor: pointer;
         background-clip: text;
         color: black;
         background-image: linear-gradient(to bottom, transparent, transparent);
         position: relative;
+        z-index: 2;
     }
     &--full {
         position: absolute;
         color: transparent;
+        z-index:3;
         &:hover, &:active, &:focus {
             animation-name: heart;
             animation-duration: 300ms;
