@@ -5,6 +5,7 @@
     cursor: pointer;
     &--empty{
         background-clip: text;
+        -webkit-background-clip: text;
         color: black;
         background-image: linear-gradient(to bottom, transparent, transparent);
         position: relative;
