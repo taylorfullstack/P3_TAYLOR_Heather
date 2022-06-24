@@ -64,6 +64,13 @@
     "step"
     "step"
     "step";
+    /*@media only screen and (min-width: 800px){
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
+        grid-template-areas: 
+        "heading heading"
+        "step step step"
+        ;
+    }*/
     &__card {
         background: map-get($color-palette, color-container-accented);
         border-radius: 18px;
