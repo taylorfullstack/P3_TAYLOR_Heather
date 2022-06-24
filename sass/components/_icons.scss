@@ -2,8 +2,8 @@
 
 .fa-heart {
     z-index: 2;
+    cursor: pointer;
     &--empty{
-        cursor: pointer;
         background-clip: text;
         color: black;
         background-image: linear-gradient(to bottom, transparent, transparent);
