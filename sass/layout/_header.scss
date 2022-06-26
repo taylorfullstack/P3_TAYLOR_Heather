@@ -5,8 +5,8 @@
     grid-area: header;
     gap: 1rem;
     display: grid;
-    grid-template-columns: 28% minmax(0, 1fr) 28%;
-    grid-template-rows: 10% minmax(0, 1fr) 10%;
+    grid-template-columns: 28% minmax(0, 1fr) minmax(0, 28%);
+    grid-template-rows: 10% minmax(0, 1fr) 5%;
     grid-template-areas: 
     ". . ."
     "arrow logo ."
@@ -18,7 +18,8 @@
     }
     &__arrow {
         grid-area: arrow;
-        justify-self: center;
+        justify-self: left;
         align-self: center;
+        padding: 0 1rem;
     }
 }
