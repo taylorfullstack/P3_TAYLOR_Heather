@@ -1,0 +1,70 @@
+@use "../abstracts" as *;
+
+.option {
+    background: map-get($color-palette, color-container);
+    border: 0px solid transparent;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px #e7e7e7;
+    display: flex;
+    min-width: 0;
+    overflow: hidden;
+    &__details {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        padding: 0.75rem;
+        min-width: 0;
+        &__text {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            gap: 0.5em;
+            min-width: 0;
+            &__title , &__subtitle {
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+        }
+        &__price {
+            align-self: flex-end;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+    }
+}
+
+.option__check {
+    height: 100%;
+    align-items: center;
+    background: map-get($color-palette, color-tertiary);
+    display: inline-flex;
+    border: 0px solid transparent;
+    
+    transform: scaleX(0);
+    transform-origin: right 50%;
+    transition-property: all;
+    transition-duration: 1s;
+    transition-timing-function: ease-in-out;
+    &__icon {
+        color: map-get($color-palette, color-container);
+        font-size: 1.2em;
+        padding: 0em;
+        transition: rotate 0s, padding 1s;
+       
+    }
+}
+
+.option__details {
+    &:hover {
+        & + .option__check {
+            transform: scaleX(1);
+            transition: transform 1s;
+            & > .option__check__icon {
+                transform: rotate(360deg);
+                padding: 0 1.2em;
+                transition: all 1s ease-in-out;
+            }
+        }
+    } 
+}
