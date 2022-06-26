@@ -64,13 +64,16 @@
     "step"
     "step"
     "step";
-    /*@media only screen and (min-width: 800px){
+    @media only screen and (min-width: 800px){
         grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
         grid-template-areas: 
-        "heading heading"
+        "heading heading heading"
         "step step step"
         ;
-    }*/
+    }
+    &__title {
+        grid-area: heading;
+    }
     &__card {
         background: map-get($color-palette, color-container-accented);
         border-radius: 18px;
@@ -82,16 +85,16 @@
         "number icon text";
         grid-template-columns: 5% 15% minmax(0, 1fr);
         align-items: center;
-        &:hover {
+        &:hover  {
             background: map-get($color-palette, color-primary-lighten);
+            & > .steps__card__icon {
+                color: map-get($color-palette, color-primary);
+            }
         }
         &__icon {
             color: map-get($color-palette, color-howto-icon);
             grid-area: icon;
             justify-self: center;
-            &:hover {
-                color: map-get($color-palette, color-primary);
-            }
         }
     }
 }
@@ -123,5 +126,13 @@
     "card--3"
     "card--4"
     ;
+    @media only screen and (min-width: 800px){
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        grid-template-areas: 
+        "heading heading"
+        "card--1 card--2"
+        "card--3 card--4"
+        ;
+    }
 }
 
