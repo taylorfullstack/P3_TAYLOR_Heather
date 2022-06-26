@@ -14,11 +14,13 @@
     &--full {
         position: absolute;
         color: transparent;
-        z-index:3;
+        z-index:2;
+        
         &:hover, &:active, &:focus {
             animation-name: heart;
             animation-duration: 300ms;
             animation-timing-function: ease-in-out;
+            
             background-clip: text;
             -webkit-background-clip: text;
             background-image: linear-gradient(to bottom, map-get($color-palette, color-primary), map-get($color-palette, color-secondary));
@@ -29,6 +31,14 @@
 @keyframes heart {
     0% {
         opacity: 0%;
+    }
+
+    20% {
+        opacity: 30%;
+    }
+
+    50% {
+        opacity: 70%;
     }
 
     100% {
