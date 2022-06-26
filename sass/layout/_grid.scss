@@ -42,7 +42,7 @@ body {
         "desserts"
         "order";
         @media only screen and (min-width: 800px){
-            grid-template-columns: minmax(0, 1fr);
+            grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
             grid-template-areas: 
             "title title title"
             "appetizers dinners desserts"
@@ -62,10 +62,22 @@ body {
     border-top: 1px solid transparent;
     border-top-left-radius: 30px;
     border-top-right-radius: 30px;
-    display: flex;
-    justify-content: space-between;
+    white-space: nowrap;
+    display: grid;
+    grid-template-areas: 
+    "title__text title__icon";
+    grid-template-columns: minmax(0, 1fr) 4rem;
+    &__text {
+        grid-area: title__text;
+        font-size: 1.4rem;
+    }
     &__icon {
+        grid-area: title__icon;
+        display: grid;
         align-self: center;
+        justify-self: end;
+        font-size: 1.5rem;
+        z-index: 2;
     }
 }
 
@@ -80,15 +92,15 @@ body {
     "course__container";
     &__title {
         grid-area: course__title;
-        padding: 0rem 0.5rem;
+        padding: 0rem 0.5rem 0.5rem 0.5rem;
         font-weight: 300;
         font-size: 1.2rem;
         position: relative;
-        //border-bottom: 3px solid map-get($color-palette, color-tertiary);
         &::before {
             content: "";
-            width: 10%;
+            width: 2rem;
             position: absolute;
+            top: 0.3em;
             padding: 0.5em;
             border-bottom: 3px solid map-get($color-palette, color-tertiary);
         }
@@ -96,41 +108,12 @@ body {
     &__container {
         grid-area: course__container;
         display: grid;
+        grid-template-rows: repeat(3, 1fr);
         gap: 1em;
     }
 }
 
-.option {
-    background: map-get($color-palette, color-container);
-    padding: 1rem;
-    border: 0px solid transparent;
-    border-radius: 20px;
-    box-shadow: 0 5px 20px #e7e7e7;
-    display: grid;
-    width: 100%;
-    grid-template-areas: 
-    "option__text option__price option__check"
-    "option__text option__price option__check";
-    grid-template-columns: minmax(0, 1fr);
-    &__title {
-        grid-area: option__text;
-    }
-    &__subtitle {
-        grid-area: option__text;
-    }
-    &__price {
-        grid-area: option__price;
-        align-self: end;
-        font-weight: 700;
-    }
-    &__check {
-        grid-area: option__check;
-        align-self: center;
-        opacity: 0%;
-    }
-}
-
-.grid {
+.command-container {
     display: grid;
     background: map-get($color-palette, color-container-accented);
     padding: 2rem 0 5rem 0;
