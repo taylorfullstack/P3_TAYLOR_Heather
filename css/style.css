@@ -48,6 +48,78 @@ a {
   text-decoration: none;
 }
 
+.loader {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 3;
+  text-align: center;
+  font-family: "Shrikhand", cursive;
+  font-size: 4rem;
+  background-color: #c1ede2;
+  opacity: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation-name: loader-background;
+  animation-duration: 3000ms;
+  animation-delay: 0ms;
+}
+.loader__word {
+  opacity: 1;
+  color: #9356DC;
+  text-shadow: 0.025em 0.025em #FF79DA;
+  transform: scale(1) translateZ(0px);
+  animation-name: loader-word;
+  animation-duration: 3000ms;
+  animation-timing-function: ease-in;
+}
+.loader__word--1 {
+  animation-delay: 300ms;
+  animation-duration: 400ms;
+}
+.loader__word--2 {
+  animation-delay: 600ms;
+  animation-duration: 400ms;
+}
+.loader__word--3 {
+  animation-delay: 900ms;
+  animation-duration: 400ms;
+}
+
+@keyframes loader-word {
+  0% {
+    transform: scale(1, 1);
+  }
+  26% {
+    transform: scale(1.7, 1.7);
+  }
+  31% {
+    transform: scale(2, 2);
+  }
+  50% {
+    transform: scale(1.7, 1.7);
+  }
+  85% {
+    transform: scale(1.1, 1.1);
+  }
+  100% {
+    transform: scale(1, 1);
+  }
+}
+@keyframes loader-background {
+  0% {
+    opacity: 1;
+  }
+  95% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
 .article a::after {
   content: "";
   position: absolute;
