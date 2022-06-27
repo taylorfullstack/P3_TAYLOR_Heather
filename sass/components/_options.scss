@@ -1,5 +1,7 @@
 @use "../abstracts" as *;
 
+/*Course option cards for menu pages*/
+
 .option {
     background: map-get($color-palette, color-container);
     border: 0px solid transparent;
