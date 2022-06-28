@@ -12,6 +12,12 @@
 
 /* Breakpoints mixins*/
 
+@mixin small-tablet {
+    @media screen and (min-width: map-get($breakpoints, small-tablet)){
+        @content;
+    }
+}
+
 @mixin tablet {
     @media screen and (min-width: map-get($breakpoints, tablet)){
         @content;
