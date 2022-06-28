@@ -4,14 +4,15 @@
 
 .course__container {
     transform-origin: 0% 0%;
-    transform: scaleY(1);
+    transform: scaleY(0);
     animation-name: courses;
     animation-duration: 1s;
     animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
     @for $i from 1 through 3 {
         &--#{$i} {
             animation-delay: 300ms * $i;
-            animation-duration: 300ms;
+            animation-duration: 1000ms;
         }
     }
 }
