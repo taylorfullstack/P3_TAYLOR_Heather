@@ -48,3 +48,12 @@ $link-palette: (
         text: $color-footer-text
     ) 
 );
+
+/*Breakpoints map*/
+
+$breakpoints: (
+    tablet: 768px,
+    laptop: 992px,
+    desktop: 1024px,
+    large-desktop: 1200px,
+);
