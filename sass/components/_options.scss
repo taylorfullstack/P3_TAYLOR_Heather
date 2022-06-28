@@ -2,6 +2,30 @@
 
 /*Course option cards for menu pages*/
 
+.course__container {
+    transform-origin: 0% 0%;
+    transform: scaleY(1);
+    animation-name: courses;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+    @for $i from 1 through 3 {
+        &--#{$i} {
+            animation-delay: 300ms * $i;
+            animation-duration: 300ms;
+        }
+    }
+}
+
+@keyframes courses {
+    0% {
+        transform: scaleY(0);
+    }
+
+    100% {
+        transform: scaleY(1);
+    }
+}
+
 .option {
     background: map-get($color-palette, color-container);
     border: 0px solid transparent;
