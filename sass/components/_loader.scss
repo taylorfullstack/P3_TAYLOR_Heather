@@ -3,25 +3,27 @@
 $anim-delay: 300ms;
 
 .loader {
-    position: absolute;
+    position: fixed;
     top: 0;
-    right: 0;
-    bottom: 0;
     left: 0;
+    width: 100vw;
+    height: 100vh;
     z-index: 3;
     text-align: center;
     font-family: $title-font;
     font-size: 4rem;
     background-color: lighten($color-tertiary, 10);
     opacity: 0;
-
+    
     display: flex;
     justify-content: center;
     align-items: center;
-
+    
+    
     animation-name: loader-background;
     animation-duration: 3000ms;
     animation-delay: 0ms;
+    animation-fill-mode: forwards;
     
     &__word {
         opacity: 1;
@@ -70,13 +72,25 @@ $anim-delay: 300ms;
 @keyframes loader-background {
     0% {
         opacity: 1;
+        transform: scale(1, 1);
     }
 
     95% {
         opacity: 1;
+        transform: scale(1, 1);
+    }
+
+    98% {
+        opacity: 0;
+        z-index: 3;
+    }
+
+    99% {
+        visibility: hidden;
     }
 
     100% {
         opacity: 0;
+        z-index: -1;
     }
 }
