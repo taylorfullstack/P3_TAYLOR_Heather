@@ -42,7 +42,7 @@
     background: map-get($color-palette, color-tertiary);
     display: inline-flex;
     border: 0px solid transparent;
-    
+
     transform: scaleX(0);
     transform-origin: right 50%;
     transition-property: all;
@@ -52,8 +52,8 @@
         color: map-get($color-palette, color-container);
         font-size: 1.2em;
         padding: 0em;
-        transition: transform 0s ease-in-out, padding 1s ease-in-out;
-       
+        transition: transform 0s, padding 1s;
+
     }
 }
 
@@ -65,7 +65,8 @@
             & > .option__check__icon {
                 transform: rotate(360deg);
                 padding: 0 1.2em;
+                transition: all 1s ease-in-out;
             }
         }
     } 
-}
+} 
