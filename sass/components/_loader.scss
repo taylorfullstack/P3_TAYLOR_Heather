@@ -8,7 +8,7 @@ $anim-delay: 300ms;
     left: 0;
     width: 100vw;
     height: 100vh;
-    z-index: 3;
+    z-index: 4;
     text-align: center;
     font-family: $title-font;
     font-size: 4rem;
@@ -18,7 +18,6 @@ $anim-delay: 300ms;
     display: flex;
     justify-content: center;
     align-items: center;
-    
     
     animation-name: loader-background;
     animation-duration: 3000ms;
@@ -82,7 +81,7 @@ $anim-delay: 300ms;
 
     98% {
         opacity: 0;
-        z-index: 3;
+        z-index: 4;
     }
 
     99% {
