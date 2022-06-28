@@ -11,24 +11,28 @@ $anim-delay: 300ms;
     z-index: 4;
     text-align: center;
     font-family: $title-font;
-    font-size: 4rem;
+    font-size: 2.8rem;
     background-color: lighten($color-tertiary, 10);
     opacity: 0;
-    
     display: flex;
     justify-content: center;
     align-items: center;
-    
     animation-name: loader-background;
     animation-duration: 3000ms;
     animation-delay: 0ms;
     animation-fill-mode: forwards;
-    
+    @include small-tablet {
+        font-size: 3rem;
+    }
+    @include tablet {
+        font-size: 4rem;
+    }
     &__word {
+        z-index: 4;
         opacity: 1;
         color: map-get($color-palette, color-primary);
         text-shadow: 0.025em 0.025em map-get($color-palette, color-secondary);
-        transform: scale(1) translateZ(0px);
+        transform: scale(1);
         animation-name: loader-word;
         animation-duration: 3000ms;
         animation-timing-function: ease-in;
@@ -44,6 +48,7 @@ $anim-delay: 300ms;
 @keyframes loader-word {
     0% {
         transform: scale(1, 1);
+        z-index: 4;
     }
 
     26% {
@@ -52,6 +57,7 @@ $anim-delay: 300ms;
 
     31% {
         transform: scale(2, 2);
+        z-index: 5;
     }
 
     50% {
@@ -63,8 +69,8 @@ $anim-delay: 300ms;
     }
 
     100% {
-   
         transform: scale(1, 1);
+        z-index: 4;
     }
 }
 
