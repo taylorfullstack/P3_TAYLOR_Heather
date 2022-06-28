@@ -1,6 +1,6 @@
 @use "../abstracts" as *;
 
-/*Course option cards for menu pages*/
+/*Course containers for menu pages*/
 
 .course__container {
     transform-origin: 0% 0%;
@@ -26,6 +26,8 @@
         transform: scaleY(1);
     }
 }
+
+/*Course option cards for menu pages*/
 
 .option {
     background: map-get($color-palette, color-container);
