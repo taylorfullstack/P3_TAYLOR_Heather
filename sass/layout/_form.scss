@@ -33,7 +33,7 @@
         text-align: center;
         &::placeholder {
             color: map-get($color-palette, color-search-text);
-            font-weight: 600;
+            font-weight: 700;
             font-size: 1rem;
         }
     }
