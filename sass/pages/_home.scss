@@ -64,7 +64,7 @@
     "step"
     "step"
     "step";
-    @media only screen and (min-width: 800px){
+    @include desktop {
         grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
         grid-template-areas: 
         "heading heading heading"
@@ -96,6 +96,13 @@
             grid-area: icon;
             justify-self: center;
         }
+        @include tablet {
+            margin: 0rem 5rem;
+        }
+        @include desktop {
+            margin: 0rem;
+        }
+
     }
 }
 
@@ -126,12 +133,19 @@
     "card--3"
     "card--4"
     ;
-    @media only screen and (min-width: 800px){
-        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    @include tablet {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
         grid-template-areas: 
         "heading heading"
         "card--1 card--2"
         "card--3 card--4"
+        ;
+    }
+    @include desktop {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        grid-template-areas: 
+        "heading heading heading heading"
+        "card--1 card--2 card--3 card--4"
         ;
     }
 }
