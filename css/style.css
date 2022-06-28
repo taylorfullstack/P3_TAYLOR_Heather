@@ -319,7 +319,7 @@ a {
   color: #ffffff;
   font-size: 1.2em;
   padding: 0em;
-  transition: rotate 0s, padding 1s;
+  transition: transform 0s ease-in-out, padding 1s ease-in-out;
 }
 
 .option__details:hover + .option__check {
@@ -329,7 +329,6 @@ a {
 .option__details:hover + .option__check > .option__check__icon {
   transform: rotate(360deg);
   padding: 0 1.2em;
-  transition: all 1s ease-in-out;
 }
 
 body {
