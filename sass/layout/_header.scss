@@ -20,6 +20,17 @@
         grid-area: arrow;
         justify-self: left;
         align-self: center;
-        padding: 0 1rem;
+        margin: 0rem 1rem;
+        border: 5px solid transparent;
+        border-radius: 50%;
+        color: map-get($color-palette, color-text);
+        &:hover, &:active, &:focus {
+            background: map-get($color-palette, color-container-accented);
+        }
     }
+}
+
+.fa-arrow-left {
+    font-weight: bold;
+    font-size: 1.2rem;
 }
