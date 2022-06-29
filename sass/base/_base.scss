@@ -12,3 +12,11 @@ body {
     width: 100vw;
     height: 100vh;
 }
+
+a:any-link {
+    text-decoration: none;
+}
+
+a:any-link, button {
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
