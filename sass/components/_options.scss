@@ -43,6 +43,7 @@
         justify-content: space-between;
         padding: 0.75rem;
         min-width: 0;
+        transform-origin: left 50%;
         &__text {
             display: flex;
             flex-direction: column;
@@ -69,31 +70,51 @@
     background: map-get($color-palette, color-tertiary);
     display: inline-flex;
     border: 0px solid transparent;
+    width: 4em;
+    margin-right: -4em;
+    animation-name: margin-reverse;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
 
-    transform: scaleX(0);
-    transform-origin: right 50%;
-    transition-property: all;
-    transition-duration: 1s;
-    transition-timing-function: ease-in-out;
     &__icon {
         color: map-get($color-palette, color-container);
         font-size: 1.2em;
-        padding: 0em;
-        transition: transform 0s, padding 1s;
-
+        padding: 0em 1.2em;
+        transition: transform 0s;
     }
 }
 
 .option__details {
     &:hover, &:active, &:focus {
         & + .option__check {
-            transform: scaleX(1);
-            transition: transform 1s;
+            animation-name: margin;
+            animation-duration: 1s;
+            animation-fill-mode: forwards;
+
             & > .option__check__icon {
                 transform: rotate(360deg);
-                padding: 0 1.2em;
                 transition: all 1s ease-in-out;
             }
         }
     } 
-} 
+}
+
+@keyframes margin {
+    0% {
+        margin-right: -4em;
+    }
+
+    100% {
+        margin-right: 0em;
+    }
+}
+
+@keyframes margin-reverse {
+    0% {
+        margin-right: 0em;
+    }
+
+    100% {
+        margin-right: -4em;
+    }
+}
