@@ -33,7 +33,7 @@
     background: map-get($color-palette, color-container);
     border: 0px solid transparent;
     border-radius: 12px;
-    box-shadow: 0 5px 20px #e7e7e7;
+    box-shadow: 0.1rem 0.3rem 0.75rem darken(map-get($color-palette, color-container-accented), 10);
     display: flex;
     min-width: 0;
     overflow: hidden;
@@ -85,7 +85,7 @@
 }
 
 .option__details {
-    &:hover {
+    &:hover, &:active, &:focus {
         & + .option__check {
             transform: scaleX(1);
             transition: transform 1s;
