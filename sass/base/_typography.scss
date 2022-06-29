@@ -1,24 +1,26 @@
 @use "../abstracts/" as *;
 
 // Styles
-main, footer {
+main, footer, h4 {
   font-family: $body-font;
-  font-weight: normal;
+  font-weight: 400;
 }
 
 h1 {
   font-family: $title-font;
-  font-weight: normal;
+  font-weight: 400;
   color: $color-title;
   font-size: 1.8rem;
 }
 
 h2 {
   font-size: 1.4rem;
+  font-weight: 700;
 }
 
 h3 {
   font-size: 1.2rem;
+  font-weight: 500;
 }
 
 h4 {
