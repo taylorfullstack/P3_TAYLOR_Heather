@@ -15,15 +15,15 @@
         position: absolute;
         color: transparent;
         z-index:2;
-        
+        background-clip: text;
+        -webkit-background-clip: text;
+        background-image: linear-gradient(to bottom, map-get($color-palette, color-primary), map-get($color-palette, color-secondary));
+        opacity: 0;
         &:hover, &:active, &:focus {
             animation-name: heart;
             animation-duration: 300ms;
             animation-timing-function: ease-in-out;
-            
-            background-clip: text;
-            -webkit-background-clip: text;
-            background-image: linear-gradient(to bottom, map-get($color-palette, color-primary), map-get($color-palette, color-secondary));
+            animation-fill-mode: forwards;
         }
     }
 }
@@ -33,12 +33,20 @@
         opacity: 0%;
     }
 
+    12% {
+        opacity: 15%;
+    }
+
     20% {
         opacity: 30%;
     }
 
     50% {
-        opacity: 70%;
+        opacity: 60%;
+    }
+
+    72% {
+        opacity: 79%;
     }
 
     100% {
