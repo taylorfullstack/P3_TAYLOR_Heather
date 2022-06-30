@@ -41,7 +41,7 @@ $anim-delay: 600ms;
         text-shadow: 0.025em 0.025em map-get($color-palette, color-secondary);
         transform: scale(1);
         animation-name: loader-word;
-        animation-duration: 300ms;
+        animation-duration: 400ms;
         animation-timing-function: ease-in-out;
         @for $i from 1 through 3 {
             &--#{$i} {
@@ -74,9 +74,18 @@ $anim-delay: 600ms;
         transform: scale(1.1, 1.1);
     }
 
-    100% {
+    98% {
         transform: scale(1, 1);
         z-index: 9;
+    }
+
+    99% {
+        visibility: hidden;
+    }
+
+    100% {
+        transform: scale(1, 1);
+        z-index: -1;
     }
 }
 
