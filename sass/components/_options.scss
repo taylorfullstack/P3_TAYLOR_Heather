@@ -37,12 +37,26 @@
     min-width: 0;
     overflow: hidden;
     &__details {
-        display: flex;
         width: 100%;
-        justify-content: space-between;
-        padding: 0.75rem;
         min-width: 0;
+        padding: 0.75rem;
+        border: none;
+        background-color: transparent;
+        font-family: $body-font;
+        display: flex;
+        justify-content: space-between;
+        text-align: left;
         transform-origin: left 50%;
+        &:hover {
+            & + .option__check {
+                margin-right: 0em;
+                transition: margin-right 1s ease-in-out;
+                & > .option__check__icon {
+                    transform: rotate(360deg);
+                    transition: all 1s ease-in-out;
+                }
+            }
+        } 
         &__text {
             display: flex;
             flex-direction: column;
@@ -54,41 +68,31 @@
                 overflow: hidden;
                 text-overflow: ellipsis;
             }
+            &__subtitle {
+                font-size: 1rem;
+            }
         }
         &__price {
             align-self: flex-end;
             font-weight: 700;
             flex-shrink: 0;
+            font-size: 1rem;
         }
     }
-}
-
-.option__check {
-    height: 100%;
-    align-items: center;
-    background: map-get($color-palette, color-tertiary);
-    display: inline-flex;
-    border: 0px solid transparent;
-    width: 4em;
-    margin-right: -4em;
-    transition: margin-right 1s;
-    &__icon {
-        color: map-get($color-palette, color-container);
-        font-size: 1.2em;
-        padding: 0em 1.2em;
-        transition: transform 0s;
-    }
-}
-
-.option__details {
-    &:hover {
-        & + .option__check {
-            margin-right: 0em;
-            transition: margin-right 1s ease-in-out;
-            & > .option__check__icon {
-                transform: rotate(360deg);
-                transition: all 1s ease-in-out;
-            }
+    &__check {
+        height: 100%;
+        align-items: center;
+        background: map-get($color-palette, color-tertiary);
+        display: inline-flex;
+        border: 0px solid transparent;
+        width: 4em;
+        margin-right: -4em;
+        transition: margin-right 1s;
+        &__icon {
+            color: map-get($color-palette, color-container);
+            font-size: 1.2em;
+            padding: 0em 1.2em;
+            transition: transform 0s;
         }
-    } 
+    }
 }
