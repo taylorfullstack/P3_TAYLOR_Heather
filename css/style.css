@@ -367,6 +367,7 @@ footer h2 {
 }
 /*Course option cards for menu pages*/
 .option {
+  position: relative;
   background: #ffffff;
   border: 0px solid transparent;
   border-radius: 12px;
@@ -415,6 +416,15 @@ footer h2 {
   font-weight: 700;
   flex-shrink: 0;
   font-size: 1rem;
+}
+.option__details__button {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  border: none;
+  background-color: transparent;
 }
 .option__check {
   height: 100%;
