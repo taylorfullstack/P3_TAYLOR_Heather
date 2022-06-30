@@ -8,7 +8,7 @@ $anim-delay: 600ms;
     left: 0;
     width: 100vw;
     height: 100vh;
-    z-index: 4;
+    z-index: 9;
     text-align: center;
     font-family: $title-font;
     font-size: 2.8rem;
@@ -20,7 +20,14 @@ $anim-delay: 600ms;
     animation-name: loader-background;
     animation-duration: 3000ms;
     animation-delay: 0ms;
+    animation-timing-function: ease-in-out;
     animation-fill-mode: forwards;
+    @include fold-phone {
+        font-size: 2rem;
+    }
+    @include small-phone {
+        font-size: 2.4rem;
+    }
     @include small-tablet {
         font-size: 3rem;
     }
@@ -28,18 +35,17 @@ $anim-delay: 600ms;
         font-size: 4rem;
     }
     &__word {
-        z-index: 4;
+        z-index: 9;
         opacity: 1;
         color: map-get($color-palette, color-primary);
         text-shadow: 0.025em 0.025em map-get($color-palette, color-secondary);
         transform: scale(1);
         animation-name: loader-word;
-        animation-duration: 3000ms;
-        animation-timing-function: ease-in;
+        animation-duration: 300ms;
+        animation-timing-function: ease-in-out;
         @for $i from 1 through 3 {
             &--#{$i} {
                 animation-delay: $anim-delay * $i;
-                animation-duration: 400ms;
             }
         }
     }
@@ -48,7 +54,7 @@ $anim-delay: 600ms;
 @keyframes loader-word {
     0% {
         transform: scale(1, 1);
-        z-index: 4;
+        z-index: 9;
     }
 
     26% {
@@ -57,7 +63,7 @@ $anim-delay: 600ms;
 
     31% {
         transform: scale(2, 2);
-        z-index: 5;
+        z-index: 10;
     }
 
     50% {
@@ -70,12 +76,13 @@ $anim-delay: 600ms;
 
     100% {
         transform: scale(1, 1);
-        z-index: 4;
+        z-index: 9;
     }
 }
 
 @keyframes loader-background {
     0% {
+        z-index: 9;
         opacity: 1;
         transform: scale(1, 1);
     }
@@ -87,7 +94,7 @@ $anim-delay: 600ms;
 
     98% {
         opacity: 0;
-        z-index: 4;
+        z-index: 9;
     }
 
     99% {
