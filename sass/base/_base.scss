@@ -17,6 +17,7 @@ a:any-link {
     text-decoration: none;
 }
 
+//Change default blue highlight color to zero opacity for all anchor tags.
 a:any-link, button {
     -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
