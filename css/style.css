@@ -98,15 +98,15 @@ footer h2 {
   animation-timing-function: ease-in;
 }
 .loader__word--1 {
-  animation-delay: 300ms;
-  animation-duration: 400ms;
-}
-.loader__word--2 {
   animation-delay: 600ms;
   animation-duration: 400ms;
 }
+.loader__word--2 {
+  animation-delay: 1200ms;
+  animation-duration: 400ms;
+}
 .loader__word--3 {
-  animation-delay: 900ms;
+  animation-delay: 1800ms;
   animation-duration: 400ms;
 }
 
@@ -320,21 +320,21 @@ footer h2 {
   transform-origin: 0% 0%;
   transform: scaleY(0);
   animation-name: courses;
-  animation-duration: 1s;
+  animation-duration: 600ms;
   animation-timing-function: ease-in-out;
   animation-fill-mode: forwards;
 }
 .course__container--1 {
-  animation-delay: 300ms;
-  animation-duration: 1000ms;
+  animation-delay: 600ms;
+  animation-duration: 600ms;
 }
 .course__container--2 {
-  animation-delay: 600ms;
-  animation-duration: 1000ms;
+  animation-delay: 1200ms;
+  animation-duration: 600ms;
 }
 .course__container--3 {
-  animation-delay: 900ms;
-  animation-duration: 1000ms;
+  animation-delay: 1800ms;
+  animation-duration: 600ms;
 }
 
 @keyframes courses {
@@ -389,9 +389,7 @@ footer h2 {
   border: 0px solid transparent;
   width: 4em;
   margin-right: -4em;
-  animation-name: margin-reverse;
-  animation-duration: 1s;
-  animation-fill-mode: forwards;
+  transition: margin-right 1s;
 }
 .option__check__icon {
   color: #ffffff;
@@ -400,32 +398,15 @@ footer h2 {
   transition: transform 0s;
 }
 
-.option__details:hover + .option__check, .option__details:active + .option__check, .option__details:focus + .option__check {
-  animation-name: margin;
-  animation-duration: 1s;
-  animation-fill-mode: forwards;
+.option__details:hover + .option__check {
+  margin-right: 0em;
+  transition: margin-right 1s ease-in-out;
 }
-.option__details:hover + .option__check > .option__check__icon, .option__details:active + .option__check > .option__check__icon, .option__details:focus + .option__check > .option__check__icon {
+.option__details:hover + .option__check > .option__check__icon {
   transform: rotate(360deg);
   transition: all 1s ease-in-out;
 }
 
-@keyframes margin {
-  0% {
-    margin-right: -4em;
-  }
-  100% {
-    margin-right: 0em;
-  }
-}
-@keyframes margin-reverse {
-  0% {
-    margin-right: 0em;
-  }
-  100% {
-    margin-right: -4em;
-  }
-}
 body {
   display: grid;
   width: 100%;
