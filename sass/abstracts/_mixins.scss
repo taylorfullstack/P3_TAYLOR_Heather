@@ -1,6 +1,10 @@
 @use "../abstracts/functions" as *;
 
-/* Link mixin*/
+//Link mixin
+//To use this mixin, add
+//  @include link-palette($link-palette);
+//to a link selector.
+//Read the _function.scss file to see the link-palette map.
 
 @mixin link-palette($link-palette) {
     @each $state, $link-behavior-palette in $link-palette{
@@ -10,7 +14,10 @@
     }
 }
 
-/* Breakpoints mixins*/
+//Breakpoints mixins
+//If an additional breakpoint is needed, first add the breakpoint to the breakpoints map in the _function.scss file.
+//Then, add a mixin here, using the new map key.
+
 @mixin fold-phone {
     @media screen and (min-width: map-get($breakpoints, fold-phone)){
         @content;
