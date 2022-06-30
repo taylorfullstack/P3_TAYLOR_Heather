@@ -1,6 +1,9 @@
 @use "./variables" as *;
 
 /*Color Map*/
+//Color palette map for the site.
+//This map is both intended for and used in the footer of the entire site.
+//The hexadecimal color values for the variables used in this map are in the _variables.scss file.
 
 $color-palette: (
     color-primary: $color-primary,
@@ -26,7 +29,11 @@ $color-palette: (
     color-footer-text: $color-footer-text
 );
 
-/*Link map*/
+/*Link Map*/
+//Link color palette map for different link states.
+//This map is both intended for and used in the footer, which is identical throughout the site.
+//The hexadecimal color values for the variables used in this map are in the _variables.scss file.
+//This map is used in the link-palette mixin in the _mixins.scss file.
 
 $link-palette: (
     link: (
@@ -49,7 +56,10 @@ $link-palette: (
     ) 
 );
 
-/*Breakpoints map*/
+/*Breakpoints Map*/
+//If an additional breakpoint is needed, first add the breakpoint to this map.
+//Then, create a mixin using the new map key in the _mixins.scss file.
+//Note that these breakpoints are based on a mobile-first design, to be used with min-width media queries.
 
 $breakpoints: (
     fold-phone: 280px,
