@@ -1,13 +1,12 @@
 @use "../abstracts" as *;
 
-/*home page search form*/
+/*Home page search form*/
 
 .search__form {
     grid-row: form-section-1 / form-section-2;
     width: 100%;
     height: 100%;
     display: grid;
-    //justify-content: center;
     grid-template-rows: minmax(0, 1fr) minmax(0, 2fr) minmax(0, 1fr);
     &__container {
         grid-row: 1;
@@ -21,24 +20,24 @@
         
     }
     &__icon {
-        background: map-get($color-palette, color-search-container);
-        color: map-get($color-palette, color-search-text);
+        grid-row: 1;
         align-self: center;
         justify-self: end;
-        grid-row: 1;
+        background: map-get($color-palette, color-search-container);
+        color: map-get($color-palette, color-search-text);
     }
     &__input {
-        background: map-get($color-palette, color-search-container);
-        box-shadow: 0rem 0.2rem 0.1rem 0rem darken(map-get($color-palette, color-search-container), 10) inset;
-        border: none;
+        grid-row: 1;
         padding-top: 0.2rem;
         margin-left: 25px;
-        grid-row: 1;
+        background: map-get($color-palette, color-search-container);
+        border: none;
+        box-shadow: 0rem 0.2rem 0.1rem 0rem darken(map-get($color-palette, color-search-container), 10) inset;
         text-align: center;
         &::placeholder {
             color: map-get($color-palette, color-search-text);
-            font-weight: 700;
             font-size: 1rem;
+            font-weight: 700;
         }
     }
 }
