@@ -1,8 +1,12 @@
-// Fonts
+//Fonts
+//These two Google font families were imported in the main.scss file.
+
 $title-font: 'Shrikhand', cursive;  
 $body-font: 'Roboto', sans-serif;
 
 //Colors
+//These variables are used in the color-palette map in the _functions.scss file.
+//Changing the hexadecimal color values of these variables will change the values of the color-palette map.
 
 $color-primary: #9356DC;
 $color-secondary: #FF79DA;
