@@ -1,5 +1,8 @@
 @use "../abstracts" as *;
 
+//Header grid is identical on all pages.
+//Arrow is not visible on home page.
+/* Header */
 .header {
     background: map-get($color-palette, color-container);
     grid-area: header;
