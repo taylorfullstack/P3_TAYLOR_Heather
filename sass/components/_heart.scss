@@ -1,0 +1,56 @@
+@use "../abstracts" as *;
+
+/* Heart icon */
+.fa-heart {
+    z-index: 2;
+    cursor: pointer;
+    &--empty{
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: black;
+        background-image: linear-gradient(to bottom, transparent, transparent);
+        position: relative;
+        z-index: 2;
+    }
+    &--full {
+        position: absolute;
+        color: transparent;
+        z-index:2;
+        background-clip: text;
+        -webkit-background-clip: text;
+        background-image: linear-gradient(to bottom, map-get($color-palette, color-primary), map-get($color-palette, color-secondary));
+        opacity: 0;
+        &:hover, &:active, &:focus {
+            animation-name: heart;
+            animation-duration: 300ms;
+            animation-timing-function: ease-in-out;
+            animation-fill-mode: forwards;
+        }
+    }
+}
+
+@keyframes heart {
+    0% {
+        opacity: 0%;
+    }
+
+    12% {
+        opacity: 15%;
+    }
+
+    20% {
+        opacity: 30%;
+    }
+
+    50% {
+        opacity: 60%;
+    }
+
+    72% {
+        opacity: 79%;
+    }
+
+    100% {
+        opacity: 100%;
+    }
+}
