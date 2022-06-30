@@ -11,6 +11,17 @@
 }
 
 /* Breakpoints mixins*/
+@mixin fold-phone {
+    @media screen and (min-width: map-get($breakpoints, fold-phone)){
+        @content;
+    }
+}
+
+@mixin small-phone {
+    @media screen and (min-width: map-get($breakpoints, small-phone)){
+        @content;
+    }
+}
 
 @mixin small-tablet {
     @media screen and (min-width: map-get($breakpoints, small-tablet)){
