@@ -43,6 +43,17 @@ h2 {
   font-weight: 700;
 }
 
+@media screen and (min-width: 280px) {
+  .steps__card > h3 {
+    font-size: 0.9rem;
+  }
+}
+@media screen and (min-width: 320px) {
+  .steps__card > h3 {
+    font-size: 1rem;
+  }
+}
+
 h3 {
   font-size: 1.2rem;
   font-weight: 500;
@@ -63,7 +74,7 @@ footer h2 {
   left: 0;
   width: 100vw;
   height: 100vh;
-  z-index: 4;
+  z-index: 9;
   text-align: center;
   font-family: "Shrikhand", cursive;
   font-size: 2.8rem;
@@ -75,7 +86,18 @@ footer h2 {
   animation-name: loader-background;
   animation-duration: 3000ms;
   animation-delay: 0ms;
+  animation-timing-function: ease-in-out;
   animation-fill-mode: forwards;
+}
+@media screen and (min-width: 280px) {
+  .loader {
+    font-size: 2rem;
+  }
+}
+@media screen and (min-width: 320px) {
+  .loader {
+    font-size: 2.4rem;
+  }
 }
 @media screen and (min-width: 481px) {
   .loader {
@@ -88,39 +110,36 @@ footer h2 {
   }
 }
 .loader__word {
-  z-index: 4;
+  z-index: 9;
   opacity: 1;
   color: #9356DC;
   text-shadow: 0.025em 0.025em #FF79DA;
   transform: scale(1);
   animation-name: loader-word;
-  animation-duration: 3000ms;
-  animation-timing-function: ease-in;
+  animation-duration: 300ms;
+  animation-timing-function: ease-in-out;
 }
 .loader__word--1 {
   animation-delay: 600ms;
-  animation-duration: 400ms;
 }
 .loader__word--2 {
   animation-delay: 1200ms;
-  animation-duration: 400ms;
 }
 .loader__word--3 {
   animation-delay: 1800ms;
-  animation-duration: 400ms;
 }
 
 @keyframes loader-word {
   0% {
     transform: scale(1, 1);
-    z-index: 4;
+    z-index: 9;
   }
   26% {
     transform: scale(1.7, 1.7);
   }
   31% {
     transform: scale(2, 2);
-    z-index: 5;
+    z-index: 10;
   }
   50% {
     transform: scale(1.7, 1.7);
@@ -130,11 +149,12 @@ footer h2 {
   }
   100% {
     transform: scale(1, 1);
-    z-index: 4;
+    z-index: 9;
   }
 }
 @keyframes loader-background {
   0% {
+    z-index: 9;
     opacity: 1;
     transform: scale(1, 1);
   }
@@ -144,7 +164,7 @@ footer h2 {
   }
   98% {
     opacity: 0;
-    z-index: 4;
+    z-index: 9;
   }
   99% {
     visibility: hidden;
@@ -711,6 +731,11 @@ footer a:invalid {
   grid-template-areas: "number icon text";
   grid-template-columns: 5% 20% minmax(0, 1fr);
   align-items: center;
+}
+@media screen and (min-width: 280px) {
+  .steps__card {
+    padding: 1.5rem 0.5rem 1.5rem 0;
+  }
 }
 .steps__card:hover {
   background: #f5edff;
