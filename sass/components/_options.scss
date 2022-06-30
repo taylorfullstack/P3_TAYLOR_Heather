@@ -6,13 +6,13 @@
     transform-origin: 0% 0%;
     transform: scaleY(0);
     animation-name: courses;
-    animation-duration: 1s;
+    animation-duration: 600ms;
     animation-timing-function: ease-in-out;
     animation-fill-mode: forwards;
     @for $i from 1 through 3 {
         &--#{$i} {
-            animation-delay: 300ms * $i;
-            animation-duration: 1000ms;
+            animation-delay: 600ms * $i;
+            animation-duration: 600ms;
         }
     }
 }
@@ -28,7 +28,6 @@
 }
 
 /*Course option cards for menu pages*/
-
 .option {
     background: map-get($color-palette, color-container);
     border: 0px solid transparent;
@@ -72,10 +71,7 @@
     border: 0px solid transparent;
     width: 4em;
     margin-right: -4em;
-    animation-name: margin-reverse;
-    animation-duration: 1s;
-    animation-fill-mode: forwards;
-
+    transition: margin-right 1s;
     &__icon {
         color: map-get($color-palette, color-container);
         font-size: 1.2em;
@@ -85,36 +81,14 @@
 }
 
 .option__details {
-    &:hover, &:active, &:focus {
+    &:hover {
         & + .option__check {
-            animation-name: margin;
-            animation-duration: 1s;
-            animation-fill-mode: forwards;
-
+            margin-right: 0em;
+            transition: margin-right 1s ease-in-out;
             & > .option__check__icon {
                 transform: rotate(360deg);
                 transition: all 1s ease-in-out;
             }
         }
     } 
-}
-
-@keyframes margin {
-    0% {
-        margin-right: -4em;
-    }
-
-    100% {
-        margin-right: 0em;
-    }
-}
-
-@keyframes margin-reverse {
-    0% {
-        margin-right: 0em;
-    }
-
-    100% {
-        margin-right: -4em;
-    }
 }
