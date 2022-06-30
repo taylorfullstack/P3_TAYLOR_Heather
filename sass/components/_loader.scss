@@ -1,19 +1,19 @@
 @use "../abstracts" as *;
 
-$anim-delay: 600ms;
+/* Home page loader */
 
 .loader {
     position: fixed;
     top: 0;
     left: 0;
+    z-index: 9;
     width: 100vw;
     height: 100vh;
-    z-index: 9;
-    text-align: center;
     font-family: $title-font;
     font-size: 2.8rem;
     background-color: lighten($color-tertiary, 10);
     opacity: 0;
+    text-align: center;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -45,9 +45,36 @@ $anim-delay: 600ms;
         animation-timing-function: ease-in-out;
         @for $i from 1 through 3 {
             &--#{$i} {
-                animation-delay: $anim-delay * $i;
+                animation-delay: 600ms * $i;
             }
         }
+    }
+}
+
+@keyframes loader-background {
+    0% {
+        z-index: 9;
+        opacity: 1;
+        transform: scale(1, 1);
+    }
+
+    95% {
+        opacity: 1;
+        transform: scale(1, 1);
+    }
+
+    98% {
+        opacity: 0;
+        z-index: 9;
+    }
+
+    99% {
+        visibility: hidden;
+    }
+
+    100% {
+        opacity: 0;
+        z-index: -1;
     }
 }
 
@@ -85,33 +112,6 @@ $anim-delay: 600ms;
 
     100% {
         transform: scale(1, 1);
-        z-index: -1;
-    }
-}
-
-@keyframes loader-background {
-    0% {
-        z-index: 9;
-        opacity: 1;
-        transform: scale(1, 1);
-    }
-
-    95% {
-        opacity: 1;
-        transform: scale(1, 1);
-    }
-
-    98% {
-        opacity: 0;
-        z-index: 9;
-    }
-
-    99% {
-        visibility: hidden;
-    }
-
-    100% {
-        opacity: 0;
         z-index: -1;
     }
 }
