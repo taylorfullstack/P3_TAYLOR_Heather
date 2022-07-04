@@ -1,5 +1,7 @@
 @use "../abstracts" as *;
+
 /* Footer */
+
 footer {
     grid-area: footer;
     background: map-get($color-palette, color-footer-container);
