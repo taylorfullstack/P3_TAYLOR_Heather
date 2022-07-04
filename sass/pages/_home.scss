@@ -7,6 +7,7 @@
 }
 
 /* Home page Main section */
+
 .main {
     grid-area: main;
     width: 100%;
@@ -48,12 +49,12 @@
         text-align: center;
     }
     &__subheading {
-        grid-area: search__subheading;
         text-align: center;
     }
 }
 
 /* Home page Steps section */
+
 .steps {
     grid-area: steps;
     padding: 3.5rem 1rem;
@@ -126,7 +127,8 @@
     }
 }
 
-//Steps section circle for steps 1, 2, 3
+/* Steps section circle for steps 1, 2, 3 */
+
 .circle {
     grid-area: number;
     position: relative;
@@ -141,6 +143,7 @@
 }
 
 /* Home page Restaurants section */
+
 .restaurants {
     grid-area: restaurants;
     padding: 3.5rem 1rem;
