@@ -1,14 +1,16 @@
 @use "../abstracts" as *;
 
+/* Buttons - search and command */
 .btn {
     min-width: fit-content;
     max-width: fit-content;
     font-size: 1.2rem;
     font-weight: 500;
     background-color: map-get($color-palette, color-primary);
-    background-image: linear-gradient(to top left, map-get($color-palette, color-primary), map-get($color-palette, color-secondary));
+    background-image: linear-gradient(to top left, map-get($color-palette, color-primary), 
+        map-get($color-palette, color-secondary));
     color: map-get($color-palette, color-container);
-    box-shadow: 0 5px 20px darken(#e7e7e7, 20);
+    box-shadow: 0.1rem 0.3rem 0.75rem darken(map-get($color-palette, color-container-accented), 30);
     border: 0;
     border-radius: 100vmax;
     cursor: pointer;
@@ -28,8 +30,10 @@
         justify-self: center;
         padding: 1.2rem 3rem;
     }
-    &:hover {
-        background-image: linear-gradient(to top left, lighten(map-get($color-palette, color-primary), 10), (map-get($color-palette, color-secondary)));
-        box-shadow: 0.1rem 0.3rem 0.75rem darken(map-get($color-palette, color-container-accented), 30);
+    &:hover, &:active {
+        background-image: linear-gradient(to top left, lighten(map-get($color-palette, color-primary), 10), 
+            (map-get($color-palette, color-secondary)));
+        box-shadow: 0.1rem 0.3rem 0.75rem darken(map-get($color-palette, color-container-accented), 30),
+            -0.1rem -0.05rem 0.75rem darken(map-get($color-palette, color-container-accented), 30);
     }
 }
