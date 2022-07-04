@@ -1,0 +1,31 @@
+//Fonts
+//These two Google font families were imported in the main.scss file.
+
+$title-font: 'Shrikhand', cursive;  
+$body-font: 'Roboto', sans-serif;
+
+//Colors
+//These variables are used in the color-palette map in the _functions.scss file.
+//Changing the hexadecimal color values of these variables will change the values of the color-palette map.
+
+$color-primary: #9356DC;
+$color-secondary: #FF79DA;
+$color-tertiary: #99E2D0;
+
+$color-primary-lighten: #f5edff;
+$color-tertiary-darken: #008766;
+
+$color-title: #101010;
+
+$color-container: #ffffff;
+$color-text: #000000;
+
+$color-search-text: #353535;
+$color-search-container: #eaeaea;
+
+$color-container-accented: #f6f6f6;
+
+$color-howto-icon: #7e7e7e;
+
+$color-footer-container: #353535;
+$color-footer-text: #ffffff;

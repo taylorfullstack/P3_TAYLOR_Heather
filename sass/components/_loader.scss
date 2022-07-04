@@ -1,0 +1,122 @@
+@use "../abstracts" as *;
+
+/* Home page loader */
+
+.loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9;
+    width: 100vw;
+    height: 100vh;
+    font-family: $title-font;
+    font-size: 2.8rem;
+    background-color: lighten($color-tertiary, 10);
+    opacity: 0;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation-name: loader-background;
+    animation-duration: 2990ms;
+    animation-delay: 0ms;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+    @include fold-phone {
+        font-size: 2rem;
+    }
+    @include small-phone {
+        font-size: 2.4rem;
+    }
+    @include small-tablet {
+        font-size: 3rem;
+    }
+    @include tablet {
+        font-size: 4rem;
+    }
+    &__word {
+        z-index: 9;
+        opacity: 1;
+        color: map-get($color-palette, color-primary);
+        text-shadow: 0.025em 0.025em map-get($color-palette, color-secondary);
+        transform: scale(1);
+        animation-name: loader-word;
+        animation-duration: 400ms;
+        animation-timing-function: ease-in-out;
+        @for $i from 1 through 1 {
+            &--#{$i} {
+                animation-delay: 800ms * $i;
+            }
+        }
+        @for $i from 2 through 3 {
+            &--#{$i} {
+                animation-delay: 800ms * $i;
+            }
+        }
+    }
+}
+
+@keyframes loader-background {
+    0% {
+        z-index: 9;
+        opacity: 1;
+        transform: scale(1, 1);
+    }
+
+    95% {
+        opacity: 1;
+        transform: scale(1, 1);
+    }
+
+    98% {
+        opacity: 0;
+        z-index: 9;
+    }
+
+    99% {
+        visibility: hidden;
+    }
+
+    100% {
+        opacity: 0;
+        z-index: -1;
+    }
+}
+
+@keyframes loader-word {
+    0% {
+        transform: scale(1, 1);
+        z-index: 9;
+    }
+
+    26% {
+        transform: scale(1.7, 1.7);
+    }
+
+    31% {
+        transform: scale(2, 2);
+        z-index: 10;
+    }
+
+    50% {
+        transform: scale(1.7, 1.7);
+    }
+
+    85% {
+        transform: scale(1.1, 1.1);
+    }
+
+    98% {
+        transform: scale(1, 1);
+        z-index: 9;
+    }
+
+    99% {
+        visibility: hidden;
+    }
+
+    100% {
+        transform: scale(1, 1);
+        z-index: -1;
+    }
+}

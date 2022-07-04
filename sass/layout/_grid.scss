@@ -1,0 +1,131 @@
+@use "../abstracts" as *;
+
+//Body grid is identical for home page and menu pages
+
+body {
+    display: grid;
+    width: 100%;
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas: 
+    "header"
+    "main"
+    "footer";
+}
+
+/* Menu pages grid */
+
+.restaurant {
+    grid-area: main;
+    width: 100%;
+    display: grid;
+    grid-template-areas: 
+    "img"
+    "overlap"
+    "menu";
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: 220px 1.5em minmax(0 , 1fr);
+    &__image {
+        grid-row: img / overlap;
+        &__img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+    &__menu {
+        grid-row: overlap / menu;
+        width: 100%;
+        display: grid;
+        grid-template-columns: minmax(0, 1fr);
+        grid-template-areas: 
+        "title"
+        "appetizers"
+        "dinners"
+        "desserts"
+        "order";
+        @include laptop {
+            grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
+            grid-template-areas: 
+            "title title title"
+            "appetizers dinners desserts"
+            "order order order";
+        }
+    }
+}
+
+.restaurant__image, .restaurant__menu {
+    grid-column: 1/-1;
+}
+
+/* Restaurant menu title on menu pages */
+
+.title {
+    grid-area: title;
+    padding: 1.5rem;
+    background: map-get($color-palette, color-container-accented);
+    border-top: 1px solid transparent;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    white-space: nowrap;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 4rem;
+    grid-template-areas: 
+    "title__text title__icon";
+    &__text {
+        grid-area: title__text;
+        font-size: 1.6rem;
+    }
+    &__icon {
+        grid-area: title__icon;
+        z-index: 2;
+        align-self: center;
+        justify-self: end;
+        border: none;
+        background-color: transparent;
+        font-size: 1.5rem;
+        cursor: pointer;
+        display: grid;
+    }
+}
+
+/*Restaurant menu courses*/
+//Read course__container.scss for all course container styling.
+.course {
+    gap: 0.5em;
+    padding: 1rem;
+    background: map-get($color-palette, color-container-accented);
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas: 
+    "course__title"
+    "course__container";
+    &__title {
+        grid-area: course__title;
+        position: relative;
+        padding: 0rem 0.5rem 0.5rem 0.5rem;
+        font-weight: 400;
+        font-size: 1.1rem;
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0.3em;
+            width: 2rem;
+            padding: 0.5em;
+            border-bottom: 3px solid map-get($color-palette, color-tertiary);
+        }
+    }
+}
+
+/* Command button container */
+.command-container {
+    padding: 2rem 0 5rem 0;
+    background: map-get($color-palette, color-container-accented);
+    display: grid;
+    @include tablet {
+        grid-column: -1/1;
+    }
+}
+
+
+
+

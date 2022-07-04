@@ -1,0 +1,43 @@
+@use "../abstracts" as *;
+
+/*Home page search form*/
+
+.search__form {
+    grid-row: form-section-1 / form-section-2;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-rows: minmax(0, 1fr) minmax(0, 2fr) minmax(0, 1fr);
+    &__container {
+        grid-row: 1;
+        grid-column: -1/3;
+        height: 70%;
+        background: map-get($color-palette, color-search-container);
+        box-shadow: 0rem 0.2rem 0.1rem 0rem darken(map-get($color-palette, color-search-container), 10) inset;
+        display: flex;
+        align-content: center;
+        justify-content: center;
+        
+    }
+    &__icon {
+        grid-row: 1;
+        align-self: center;
+        justify-self: end;
+        background: map-get($color-palette, color-search-container);
+        color: map-get($color-palette, color-search-text);
+    }
+    &__input {
+        grid-row: 1;
+        padding-top: 0.2rem;
+        margin-left: 25px;
+        background: map-get($color-palette, color-search-container);
+        border: none;
+        box-shadow: 0rem 0.2rem 0.1rem 0rem darken(map-get($color-palette, color-search-container), 10) inset;
+        text-align: center;
+        &::placeholder {
+            color: map-get($color-palette, color-search-text);
+            font-size: 1rem;
+            font-weight: 700;
+        }
+    }
+}

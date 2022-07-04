@@ -1,0 +1,39 @@
+@use "../abstracts" as *;
+
+/* Buttons - search and command */
+.btn {
+    min-width: fit-content;
+    max-width: fit-content;
+    font-size: 1.2rem;
+    font-weight: 500;
+    background-color: map-get($color-palette, color-primary);
+    background-image: linear-gradient(to top left, map-get($color-palette, color-primary), 
+        map-get($color-palette, color-secondary));
+    color: map-get($color-palette, color-container);
+    box-shadow: 0.1rem 0.3rem 0.75rem darken(map-get($color-palette, color-container-accented), 30);
+    border: 0;
+    border-radius: 100vmax;
+    cursor: pointer;
+    &--search {
+        grid-row: 3;
+        grid-column: -1 / 3;
+        justify-self: center;
+        align-self: center;
+        height: 80%;
+        padding: 0rem 1.5rem;
+        @include small-tablet {
+            height: 110%;
+        }
+    }
+    &--command {
+        grid-column: -1/1;
+        justify-self: center;
+        padding: 1.2rem 3rem;
+    }
+    &:hover, &:active {
+        background-image: linear-gradient(to top left, lighten(map-get($color-palette, color-primary), 10), 
+            (map-get($color-palette, color-secondary)));
+        box-shadow: 0.1rem 0.3rem 0.75rem darken(map-get($color-palette, color-container-accented), 30),
+            -0.1rem -0.05rem 0.75rem darken(map-get($color-palette, color-container-accented), 30);
+    }
+}

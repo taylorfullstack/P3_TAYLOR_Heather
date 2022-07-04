@@ -1,0 +1,82 @@
+@use "../abstracts" as *;
+
+/*Course option cards for menu pages*/
+
+.option {
+    position: relative;
+    min-width: 0;
+    overflow: hidden;
+    background: map-get($color-palette, color-container);
+    border: 0px solid transparent;
+    border-radius: 12px;
+    box-shadow: 0.1rem 0.3rem 0.75rem darken(map-get($color-palette, color-container-accented), 10);
+    display: flex;
+    &__details {
+        width: 100%;
+        min-width: 0;
+        padding: 0.75rem;
+        border: none;
+        background-color: transparent;
+        font-family: $body-font;
+        display: flex;
+        justify-content: space-between;
+        text-align: left;
+        transform-origin: left 50%;
+        &__text {
+            min-width: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            gap: 0.5em;
+            &__title , &__subtitle {
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+            &__subtitle {
+                font-size: 1rem;
+            }
+        }
+        &__price {
+            align-self: flex-end;
+            flex-shrink: 0;
+            font-weight: 700;
+            font-size: 1rem;
+        }
+        &__button {
+            position: absolute; 
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            border: none;
+            background-color: transparent;
+        }
+        &:hover {
+            & + .option__check {
+                margin-right: 0em;
+                transition: margin-right 1s ease-in-out;
+                & > .option__check__icon {
+                    transform: rotate(360deg);
+                    transition: all 1s ease-in-out;
+                }
+            }
+        } 
+    }
+    &__check {
+        height: 100%;
+        width: 4em;
+        margin-right: -4em;
+        background: map-get($color-palette, color-tertiary);
+        border: 0px solid transparent;
+        display: inline-flex;
+        align-items: center;
+        transition: margin-right 1s;
+        &__icon {
+            padding: 0em 1.2em;
+            color: map-get($color-palette, color-container);
+            font-size: 1.2em;
+            transition: transform 0s;
+        }
+    }
+}
