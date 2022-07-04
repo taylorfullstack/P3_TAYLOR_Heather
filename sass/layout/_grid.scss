@@ -57,7 +57,8 @@ body {
     grid-column: 1/-1;
 }
 
-/*Restaurant menu title*/
+/* Restaurant menu title on menu pages */
+
 .title {
     grid-area: title;
     padding: 1.5rem;
@@ -123,7 +124,6 @@ body {
     @include tablet {
         grid-column: -1/1;
     }
-
 }
 
 
