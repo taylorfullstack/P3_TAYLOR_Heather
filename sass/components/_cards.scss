@@ -5,7 +5,8 @@
     height: 100%;
     z-index: 1;
 }
-  
+
+/* Restaurant cards */
 .card {
     position: relative;
     border: 0px solid transparent;
@@ -21,7 +22,7 @@
         display: block;
     }
     &__body {
-        padding: 0.5em 1em 0.5em 0.5em;
+        padding: 1rem 1rem 0.5rem 0.75rem;
         background: map-get($color-palette, color-container);
         border-bottom-left-radius: 20px;
         border-bottom-right-radius: 20px;
@@ -34,12 +35,15 @@
         &__text {
             grid-area: card__body__heading / card__body__subheading;
             color: map-get($color-palette, color-text);
+            margin-left: 0.2rem;
         }
         &__heading {
-            grid-area: card__body__heading;
+            padding: 0.3rem 0rem;
         }
         &__subheading {
             grid-area: card__body__subheading;
+            padding-bottom: 0.5rem;
+
         }
         &__icon {
             grid-area: card__body__icon;
@@ -47,6 +51,7 @@
             bottom: 0.75em;
             right: 0.75em;
             z-index: 3;
+            padding-bottom: 1rem;
             border: none;
             background-color: transparent;
             font-size: 1.5rem;
@@ -66,9 +71,13 @@
     &--4 {
         grid-area: card--4;
     }
+    &:hover {
+       
+        box-shadow: 0.1rem 0.3rem 0.75rem map-get($color-palette, color-tertiary);
+    }
 }
 
-/*New tag on restaurant card images*/
+/* "New"/"Nouveau" tag on restaurant card images*/
 
 .new {
     position: absolute;
