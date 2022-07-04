@@ -1,9 +1,47 @@
 @use "../abstracts/" as *;
 
+/* Firefox font weight adjustment */
+
+@-moz-document url-prefix() {
+  
+  h2 {
+    font-weight: 650 !important;
+  }
+
+  h3 {
+    font-weight: 675 !important;
+  }
+
+  .steps h3 {
+    font-weight: 500 !important;
+  }
+
+  h4 {
+    font-weight: 375 !important;
+  }
+
+  .option__details__text__subtitle {
+    font-weight: 375 !important;
+  }
+
+  footer h2 {
+    font-weight: 100 !important;
+  }
+
+  .course__title {
+    font-weight: 375 !important;
+  }
+
+  .search__subheading {
+    font-weight: 375 !important;
+  }
+
+}
+
 /* Base Typography */
-main, footer, h4 {
+
+main, footer ul {
   font-family: $body-font;
-  font-weight: 400;
 }
 
 h1 {
@@ -15,20 +53,26 @@ h1 {
 
 h2 {
   font-size: 1.4rem;
-  font-weight: 700;
+  font-weight: 750;
 }
 
 h3 {
   font-size: 1.2rem;
-  font-weight: 500;
+  font-weight: 725;
+}
+
+.steps h3 {
+  font-weight: 600;
 }
 
 h4 {
   font-size: 1rem;
+  font-weight: 400;
 }
 
 footer h2 {
   font-family: $title-font;
-  font-weight: 300;
+  font-weight: 200;
+  letter-spacing: 0.5px;
 }
 
