@@ -15,7 +15,7 @@ Ohmyfood! est une jeune startup qui voudrait s'imposer sur le marché de la rest
 Clonez la source localement
 
 ```sh
-$ git clone https://github.com/htaylor91/P3_TAYLOR_Heather.git
+$ git clone https://github.com/taylorfullstack/P3_TAYLOR_Heather.git
 $ cd P3_TAYLOR_Heather
 ```
 
