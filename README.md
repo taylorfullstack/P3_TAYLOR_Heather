@@ -2,7 +2,7 @@
 
 Oh My Food
 
-[GitHub Page](https://htaylor91.github.io/P3_TAYLOR_Heather/)
+[GitHub Page](https://taylorfullstack.github.io/P3_TAYLOR_Heather/)
 
 ## Description
 
