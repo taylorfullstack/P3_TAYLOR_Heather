@@ -9,12 +9,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/htaylor91/P3_TAYLOR_Heather.git"
+    "url": "git+https://github.com/taylorfullstack/P3_TAYLOR_Heather.git"
   },
   "author": "Heather TAYLOR",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/htaylor91/P3_TAYLOR_Heather/issues"
+    "url": "https://github.com/taylorfullstack/P3_TAYLOR_Heather/issues"
   },
-  "homepage": "https://github.com/htaylor91/P3_TAYLOR_Heather#readme"
+  "homepage": "https://github.com/taylorfullstack/P3_TAYLOR_Heather#readme"
 }
